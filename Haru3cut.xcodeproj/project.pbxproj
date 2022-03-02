@@ -1,0 +1,611 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A7F1FFC227CF5E64005B1D2A /* Haru3cutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1FFC127CF5E64005B1D2A /* Haru3cutApp.swift */; };
+		A7F1FFC427CF5E64005B1D2A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1FFC327CF5E64005B1D2A /* ContentView.swift */; };
+		A7F1FFC627CF5E66005B1D2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7F1FFC527CF5E66005B1D2A /* Assets.xcassets */; };
+		A7F1FFC927CF5E66005B1D2A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7F1FFC827CF5E66005B1D2A /* Preview Assets.xcassets */; };
+		A7F1FFCB27CF5E66005B1D2A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1FFCA27CF5E66005B1D2A /* Persistence.swift */; };
+		A7F1FFCE27CF5E66005B1D2A /* Haru3cut.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7F1FFCC27CF5E66005B1D2A /* Haru3cut.xcdatamodeld */; };
+		A7F1FFD827CF5E66005B1D2A /* Haru3cutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1FFD727CF5E66005B1D2A /* Haru3cutTests.swift */; };
+		A7F1FFE227CF5E66005B1D2A /* Haru3cutUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1FFE127CF5E66005B1D2A /* Haru3cutUITests.swift */; };
+		A7F1FFE427CF5E66005B1D2A /* Haru3cutUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1FFE327CF5E66005B1D2A /* Haru3cutUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A7F1FFD427CF5E66005B1D2A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A7F1FFB627CF5E64005B1D2A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A7F1FFBD27CF5E64005B1D2A;
+			remoteInfo = Haru3cut;
+		};
+		A7F1FFDE27CF5E66005B1D2A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A7F1FFB627CF5E64005B1D2A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A7F1FFBD27CF5E64005B1D2A;
+			remoteInfo = Haru3cut;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A7F1FFBE27CF5E64005B1D2A /* Haru3cut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Haru3cut.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7F1FFC127CF5E64005B1D2A /* Haru3cutApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haru3cutApp.swift; sourceTree = "<group>"; };
+		A7F1FFC327CF5E64005B1D2A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A7F1FFC527CF5E66005B1D2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A7F1FFC827CF5E66005B1D2A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A7F1FFCA27CF5E66005B1D2A /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		A7F1FFCD27CF5E66005B1D2A /* Haru3cut.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Haru3cut.xcdatamodel; sourceTree = "<group>"; };
+		A7F1FFD327CF5E66005B1D2A /* Haru3cutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Haru3cutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7F1FFD727CF5E66005B1D2A /* Haru3cutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haru3cutTests.swift; sourceTree = "<group>"; };
+		A7F1FFDD27CF5E66005B1D2A /* Haru3cutUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Haru3cutUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7F1FFE127CF5E66005B1D2A /* Haru3cutUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haru3cutUITests.swift; sourceTree = "<group>"; };
+		A7F1FFE327CF5E66005B1D2A /* Haru3cutUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haru3cutUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A7F1FFBB27CF5E64005B1D2A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7F1FFD027CF5E66005B1D2A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7F1FFDA27CF5E66005B1D2A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A7F1FFB527CF5E64005B1D2A = {
+			isa = PBXGroup;
+			children = (
+				A7F1FFC027CF5E64005B1D2A /* Haru3cut */,
+				A7F1FFD627CF5E66005B1D2A /* Haru3cutTests */,
+				A7F1FFE027CF5E66005B1D2A /* Haru3cutUITests */,
+				A7F1FFBF27CF5E64005B1D2A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A7F1FFBF27CF5E64005B1D2A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A7F1FFBE27CF5E64005B1D2A /* Haru3cut.app */,
+				A7F1FFD327CF5E66005B1D2A /* Haru3cutTests.xctest */,
+				A7F1FFDD27CF5E66005B1D2A /* Haru3cutUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A7F1FFC027CF5E64005B1D2A /* Haru3cut */ = {
+			isa = PBXGroup;
+			children = (
+				A7F1FFC127CF5E64005B1D2A /* Haru3cutApp.swift */,
+				A7F1FFC327CF5E64005B1D2A /* ContentView.swift */,
+				A7F1FFC527CF5E66005B1D2A /* Assets.xcassets */,
+				A7F1FFCA27CF5E66005B1D2A /* Persistence.swift */,
+				A7F1FFCC27CF5E66005B1D2A /* Haru3cut.xcdatamodeld */,
+				A7F1FFC727CF5E66005B1D2A /* Preview Content */,
+			);
+			path = Haru3cut;
+			sourceTree = "<group>";
+		};
+		A7F1FFC727CF5E66005B1D2A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				A7F1FFC827CF5E66005B1D2A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A7F1FFD627CF5E66005B1D2A /* Haru3cutTests */ = {
+			isa = PBXGroup;
+			children = (
+				A7F1FFD727CF5E66005B1D2A /* Haru3cutTests.swift */,
+			);
+			path = Haru3cutTests;
+			sourceTree = "<group>";
+		};
+		A7F1FFE027CF5E66005B1D2A /* Haru3cutUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A7F1FFE127CF5E66005B1D2A /* Haru3cutUITests.swift */,
+				A7F1FFE327CF5E66005B1D2A /* Haru3cutUITestsLaunchTests.swift */,
+			);
+			path = Haru3cutUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A7F1FFBD27CF5E64005B1D2A /* Haru3cut */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A7F1FFE727CF5E66005B1D2A /* Build configuration list for PBXNativeTarget "Haru3cut" */;
+			buildPhases = (
+				A7F1FFBA27CF5E64005B1D2A /* Sources */,
+				A7F1FFBB27CF5E64005B1D2A /* Frameworks */,
+				A7F1FFBC27CF5E64005B1D2A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Haru3cut;
+			productName = Haru3cut;
+			productReference = A7F1FFBE27CF5E64005B1D2A /* Haru3cut.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A7F1FFD227CF5E66005B1D2A /* Haru3cutTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A7F1FFEA27CF5E66005B1D2A /* Build configuration list for PBXNativeTarget "Haru3cutTests" */;
+			buildPhases = (
+				A7F1FFCF27CF5E66005B1D2A /* Sources */,
+				A7F1FFD027CF5E66005B1D2A /* Frameworks */,
+				A7F1FFD127CF5E66005B1D2A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A7F1FFD527CF5E66005B1D2A /* PBXTargetDependency */,
+			);
+			name = Haru3cutTests;
+			productName = Haru3cutTests;
+			productReference = A7F1FFD327CF5E66005B1D2A /* Haru3cutTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A7F1FFDC27CF5E66005B1D2A /* Haru3cutUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A7F1FFED27CF5E66005B1D2A /* Build configuration list for PBXNativeTarget "Haru3cutUITests" */;
+			buildPhases = (
+				A7F1FFD927CF5E66005B1D2A /* Sources */,
+				A7F1FFDA27CF5E66005B1D2A /* Frameworks */,
+				A7F1FFDB27CF5E66005B1D2A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A7F1FFDF27CF5E66005B1D2A /* PBXTargetDependency */,
+			);
+			name = Haru3cutUITests;
+			productName = Haru3cutUITests;
+			productReference = A7F1FFDD27CF5E66005B1D2A /* Haru3cutUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A7F1FFB627CF5E64005B1D2A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					A7F1FFBD27CF5E64005B1D2A = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					A7F1FFD227CF5E66005B1D2A = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = A7F1FFBD27CF5E64005B1D2A;
+					};
+					A7F1FFDC27CF5E66005B1D2A = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = A7F1FFBD27CF5E64005B1D2A;
+					};
+				};
+			};
+			buildConfigurationList = A7F1FFB927CF5E64005B1D2A /* Build configuration list for PBXProject "Haru3cut" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A7F1FFB527CF5E64005B1D2A;
+			productRefGroup = A7F1FFBF27CF5E64005B1D2A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A7F1FFBD27CF5E64005B1D2A /* Haru3cut */,
+				A7F1FFD227CF5E66005B1D2A /* Haru3cutTests */,
+				A7F1FFDC27CF5E66005B1D2A /* Haru3cutUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A7F1FFBC27CF5E64005B1D2A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7F1FFC927CF5E66005B1D2A /* Preview Assets.xcassets in Resources */,
+				A7F1FFC627CF5E66005B1D2A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7F1FFD127CF5E66005B1D2A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7F1FFDB27CF5E66005B1D2A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A7F1FFBA27CF5E64005B1D2A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7F1FFCE27CF5E66005B1D2A /* Haru3cut.xcdatamodeld in Sources */,
+				A7F1FFCB27CF5E66005B1D2A /* Persistence.swift in Sources */,
+				A7F1FFC427CF5E64005B1D2A /* ContentView.swift in Sources */,
+				A7F1FFC227CF5E64005B1D2A /* Haru3cutApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7F1FFCF27CF5E66005B1D2A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7F1FFD827CF5E66005B1D2A /* Haru3cutTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7F1FFD927CF5E66005B1D2A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7F1FFE427CF5E66005B1D2A /* Haru3cutUITestsLaunchTests.swift in Sources */,
+				A7F1FFE227CF5E66005B1D2A /* Haru3cutUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A7F1FFD527CF5E66005B1D2A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A7F1FFBD27CF5E64005B1D2A /* Haru3cut */;
+			targetProxy = A7F1FFD427CF5E66005B1D2A /* PBXContainerItemProxy */;
+		};
+		A7F1FFDF27CF5E66005B1D2A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A7F1FFBD27CF5E64005B1D2A /* Haru3cut */;
+			targetProxy = A7F1FFDE27CF5E66005B1D2A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A7F1FFE527CF5E66005B1D2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A7F1FFE627CF5E66005B1D2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A7F1FFE827CF5E66005B1D2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Haru3cut/Preview Content\"";
+				DEVELOPMENT_TEAM = 74F6C3DL5Z;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Haru3cut;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A7F1FFE927CF5E66005B1D2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Haru3cut/Preview Content\"";
+				DEVELOPMENT_TEAM = 74F6C3DL5Z;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Haru3cut;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A7F1FFEB27CF5E66005B1D2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 74F6C3DL5Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Haru3cutTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Haru3cut.app/Haru3cut";
+			};
+			name = Debug;
+		};
+		A7F1FFEC27CF5E66005B1D2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 74F6C3DL5Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Haru3cutTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Haru3cut.app/Haru3cut";
+			};
+			name = Release;
+		};
+		A7F1FFEE27CF5E66005B1D2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 74F6C3DL5Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Haru3cutUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Haru3cut;
+			};
+			name = Debug;
+		};
+		A7F1FFEF27CF5E66005B1D2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 74F6C3DL5Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Haru3cutUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Haru3cut;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A7F1FFB927CF5E64005B1D2A /* Build configuration list for PBXProject "Haru3cut" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7F1FFE527CF5E66005B1D2A /* Debug */,
+				A7F1FFE627CF5E66005B1D2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A7F1FFE727CF5E66005B1D2A /* Build configuration list for PBXNativeTarget "Haru3cut" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7F1FFE827CF5E66005B1D2A /* Debug */,
+				A7F1FFE927CF5E66005B1D2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A7F1FFEA27CF5E66005B1D2A /* Build configuration list for PBXNativeTarget "Haru3cutTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7F1FFEB27CF5E66005B1D2A /* Debug */,
+				A7F1FFEC27CF5E66005B1D2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A7F1FFED27CF5E66005B1D2A /* Build configuration list for PBXNativeTarget "Haru3cutUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7F1FFEE27CF5E66005B1D2A /* Debug */,
+				A7F1FFEF27CF5E66005B1D2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A7F1FFCC27CF5E66005B1D2A /* Haru3cut.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A7F1FFCD27CF5E66005B1D2A /* Haru3cut.xcdatamodel */,
+			);
+			currentVersion = A7F1FFCD27CF5E66005B1D2A /* Haru3cut.xcdatamodel */;
+			path = Haru3cut.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = A7F1FFB627CF5E64005B1D2A /* Project object */;
+}
