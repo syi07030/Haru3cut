@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A7F1000027D10CC1005B1D2A /* RegisterPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1FFFD27D10CC1005B1D2A /* RegisterPageView.swift */; };
+		A7F1000227D10CD8005B1D2A /* AccountSelectPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1000127D10CD8005B1D2A /* AccountSelectPageView.swift */; };
+		A7F1000327D10CD8005B1D2A /* AccountSelectPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1000127D10CD8005B1D2A /* AccountSelectPageView.swift */; };
+		A7F1000427D10CD8005B1D2A /* AccountSelectPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1000127D10CD8005B1D2A /* AccountSelectPageView.swift */; };
+		A7F1000627D10D06005B1D2A /* MyPostPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1000527D10D06005B1D2A /* MyPostPageView.swift */; };
+		A7F1000727D10D06005B1D2A /* MyPostPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1000527D10D06005B1D2A /* MyPostPageView.swift */; };
+		A7F1000827D10D06005B1D2A /* MyPostPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1000527D10D06005B1D2A /* MyPostPageView.swift */; };
 		A7F1FFC227CF5E64005B1D2A /* Haru3cutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1FFC127CF5E64005B1D2A /* Haru3cutApp.swift */; };
 		A7F1FFC427CF5E64005B1D2A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1FFC327CF5E64005B1D2A /* ContentView.swift */; };
 		A7F1FFC627CF5E66005B1D2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7F1FFC527CF5E66005B1D2A /* Assets.xcassets */; };
@@ -19,6 +26,11 @@
 		A7F1FFF227D108C3005B1D2A /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = A7F1FFF127D108C3005B1D2A /* .swiftlint.yml */; };
 		A7F1FFF327D108C3005B1D2A /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = A7F1FFF127D108C3005B1D2A /* .swiftlint.yml */; };
 		A7F1FFF427D108C3005B1D2A /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = A7F1FFF127D108C3005B1D2A /* .swiftlint.yml */; };
+		A7F1FFFA27D10CB0005B1D2A /* LoginPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1FFF927D10CB0005B1D2A /* LoginPageView.swift */; };
+		A7F1FFFB27D10CB0005B1D2A /* LoginPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1FFF927D10CB0005B1D2A /* LoginPageView.swift */; };
+		A7F1FFFC27D10CB0005B1D2A /* LoginPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1FFF927D10CB0005B1D2A /* LoginPageView.swift */; };
+		A7F1FFFE27D10CC1005B1D2A /* RegisterPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1FFFD27D10CC1005B1D2A /* RegisterPageView.swift */; };
+		A7F1FFFF27D10CC1005B1D2A /* RegisterPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1FFFD27D10CC1005B1D2A /* RegisterPageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A7F1000127D10CD8005B1D2A /* AccountSelectPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSelectPageView.swift; sourceTree = "<group>"; };
+		A7F1000527D10D06005B1D2A /* MyPostPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostPageView.swift; sourceTree = "<group>"; };
 		A7F1FFBE27CF5E64005B1D2A /* Haru3cut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Haru3cut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7F1FFC127CF5E64005B1D2A /* Haru3cutApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haru3cutApp.swift; sourceTree = "<group>"; };
 		A7F1FFC327CF5E64005B1D2A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,6 +66,8 @@
 		A7F1FFE127CF5E66005B1D2A /* Haru3cutUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haru3cutUITests.swift; sourceTree = "<group>"; };
 		A7F1FFE327CF5E66005B1D2A /* Haru3cutUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haru3cutUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A7F1FFF127D108C3005B1D2A /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		A7F1FFF927D10CB0005B1D2A /* LoginPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageView.swift; sourceTree = "<group>"; };
+		A7F1FFFD27D10CC1005B1D2A /* RegisterPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +95,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A7F1000927D10D12005B1D2A /* PageView */ = {
+			isa = PBXGroup;
+			children = (
+				A7F1FFC327CF5E64005B1D2A /* ContentView.swift */,
+				A7F1FFF927D10CB0005B1D2A /* LoginPageView.swift */,
+				A7F1FFFD27D10CC1005B1D2A /* RegisterPageView.swift */,
+				A7F1000127D10CD8005B1D2A /* AccountSelectPageView.swift */,
+				A7F1000527D10D06005B1D2A /* MyPostPageView.swift */,
+			);
+			path = PageView;
+			sourceTree = "<group>";
+		};
 		A7F1FFB527CF5E64005B1D2A = {
 			isa = PBXGroup;
 			children = (
@@ -104,7 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				A7F1FFC127CF5E64005B1D2A /* Haru3cutApp.swift */,
-				A7F1FFC327CF5E64005B1D2A /* ContentView.swift */,
+				A7F1000927D10D12005B1D2A /* PageView */,
 				A7F1FFC527CF5E66005B1D2A /* Assets.xcassets */,
 				A7F1FFCA27CF5E66005B1D2A /* Persistence.swift */,
 				A7F1FFCC27CF5E66005B1D2A /* Haru3cut.xcdatamodeld */,
@@ -294,7 +322,11 @@
 			files = (
 				A7F1FFCE27CF5E66005B1D2A /* Haru3cut.xcdatamodeld in Sources */,
 				A7F1FFCB27CF5E66005B1D2A /* Persistence.swift in Sources */,
+				A7F1FFFE27D10CC1005B1D2A /* RegisterPageView.swift in Sources */,
+				A7F1000627D10D06005B1D2A /* MyPostPageView.swift in Sources */,
 				A7F1FFC427CF5E64005B1D2A /* ContentView.swift in Sources */,
+				A7F1FFFA27D10CB0005B1D2A /* LoginPageView.swift in Sources */,
+				A7F1000227D10CD8005B1D2A /* AccountSelectPageView.swift in Sources */,
 				A7F1FFC227CF5E64005B1D2A /* Haru3cutApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,6 +336,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7F1FFD827CF5E66005B1D2A /* Haru3cutTests.swift in Sources */,
+				A7F1000727D10D06005B1D2A /* MyPostPageView.swift in Sources */,
+				A7F1FFFB27D10CB0005B1D2A /* LoginPageView.swift in Sources */,
+				A7F1FFFF27D10CC1005B1D2A /* RegisterPageView.swift in Sources */,
+				A7F1000327D10CD8005B1D2A /* AccountSelectPageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +349,10 @@
 			files = (
 				A7F1FFE427CF5E66005B1D2A /* Haru3cutUITestsLaunchTests.swift in Sources */,
 				A7F1FFE227CF5E66005B1D2A /* Haru3cutUITests.swift in Sources */,
+				A7F1000427D10CD8005B1D2A /* AccountSelectPageView.swift in Sources */,
+				A7F1000827D10D06005B1D2A /* MyPostPageView.swift in Sources */,
+				A7F1000027D10CC1005B1D2A /* RegisterPageView.swift in Sources */,
+				A7F1FFFC27D10CB0005B1D2A /* LoginPageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
