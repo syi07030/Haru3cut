@@ -23,12 +23,7 @@ struct LoginPageView: View {
                 .padding()
                 .padding(.bottom,20)
                 .textFieldStyle(.plain)
-            Button("회원가입", action: buttonTest)
-                .padding()
-                .border(.black)
-            Button("로그인", action: buttonTest)
-                .padding()
-                .border(.black)
+            button()
             
         }
     }
@@ -48,6 +43,22 @@ struct AppNameText: View {
             .font(.largeTitle)
             .fontWeight(.semibold)
             .padding(.bottom, 50)
+    }
+}
+
+struct button: View {
+    var body: some View {
+        HStack(
+            alignment: .bottom,
+            spacing: 10
+        ){
+            Button("회원가입", action: buttonTest)
+             .padding()
+             .border(.black)
+            Button("로그인", action: buttonTest)
+             .padding()
+             .border(.black)
+        }
     }
 }
 

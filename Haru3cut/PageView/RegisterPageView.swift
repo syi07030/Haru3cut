@@ -16,10 +16,7 @@ struct RegisterPageView: View {
  
  var body: some View {
      VStack {
-         Text("회원가입")
-             .font(.largeTitle)
-             .fontWeight(.semibold)
-             .padding(.bottom, 50)
+         topView()
          TextField("닉네임", text: $nickName)
              .padding()
              .padding(.bottom,20)
@@ -42,7 +39,7 @@ struct RegisterPageView: View {
              .textFieldStyle(.plain)
          Button("완료", action: buttonTest)
              .padding()
-             .border(.black)
+             //.border(.black)
          
      }
  }
@@ -55,3 +52,20 @@ struct RegisterPageView_Previews: PreviewProvider {
     }
 }
 #endif
+
+struct topView: View {
+    var body: some View {
+        HStack(
+                alignment: .top,
+                spacing: 10
+            ) {
+                Image("back")
+                    .padding()
+                
+                Text("회원가입")
+                      .font(.largeTitle)
+                      .fontWeight(.semibold)
+                      .padding(.bottom, 50)
+            }
+    }
+}
