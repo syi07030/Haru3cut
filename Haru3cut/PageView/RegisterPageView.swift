@@ -17,27 +17,52 @@ struct RegisterPageView: View {
  var body: some View {
      NavigationView{
          VStack {
-             topView()
+             VStack(alignment:.center) {
+                 
+                ZStack{
+                     Text("회원가입")
+                         .font(.largeTitle)
+                         .fontWeight(.semibold)
+                     
+                     HStack{
+                         NavigationLink(destination: LoginPageView(), label:{
+                             Image("back")
+                             
+                         })
+                            .offset(y:3)
+                            .frame(width: 30, height: 30, alignment: .center)
+                             
+                         Spacer()
+                     }
+                     
+                 }
+                 .padding(.top, 50)
+             }
+             .padding(0)
+             .frame(height:100)
+             Spacer()
              TextField("닉네임", text: $nickName)
                  .textFieldStyle(TextStyle())
-                 .padding(.bottom,10)
+                 .padding(.bottom,35)
              TextField("E-mail", text: $email)
                  .textFieldStyle(TextStyle())
-                 .padding(.bottom,10)
+                 .padding(.bottom,35)
              SecureField("Password", text: $password)
                  .textFieldStyle(TextStyle())
-                 .padding(.bottom,10)
+                 .padding(.bottom,35)
              SecureField("Password check", text: $passwordCheck)
                  .textFieldStyle(TextStyle())
-                 .padding(.bottom,10)
+                 .padding(.bottom,35)
              TextField("전화번호", text: $phoneNumber)
                  .textFieldStyle(TextStyle())
-                 .padding(.bottom,30)
+                 .padding(.bottom,90)
              NavigationLink(destination: LoginPageView(), label:{Text("완료")})
                  .buttonStyle(buttonDarkStyle())
+                 .padding(.bottom, 30)
              
          } .padding()
-     } .navigationBarHidden(true)
+             .ignoresSafeArea()
+     } //.navigationBarHidden(true)
 }
 }
 
@@ -49,19 +74,26 @@ struct RegisterPageView_Previews: PreviewProvider {
 }
 #endif
 
+/*
 struct topView: View {
     var body: some View {
-        HStack(
-                alignment: .top,
-                spacing: 10
-            ) {
-                //Image("back")
-                //    .padding()
-                
+        VStack(alignment:.center) {
+            ZStack{
+                HStack{
+                    Image("back")
+                        .resizable()
+                        .offset(y:3)
+                        .frame(width: 30, height: 30, alignment: .center)
+                    Spacer()
+                }
                 Text("회원가입")
-                      .font(.largeTitle)
-                      .fontWeight(.semibold)
-                      .padding(.bottom, 50)
-            }
+                    .font(.largeTitle)
+                    .fontWeight(.semibold)
+            } .padding(.top, 50)
+        }
+        .padding(0)
+        .frame(height:100)
+
     }
 }
+*/

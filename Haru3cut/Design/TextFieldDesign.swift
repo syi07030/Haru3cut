@@ -8,17 +8,13 @@
 import Foundation
 import SwiftUI
 
-/*
-struct TextFieldDesign: View{
-    var textFieldName: String = ""
-    
-    
-    var body: some View{
-        TextField("\(textFieldName)", text: $email)
-            .padding()
-            .padding(.bottom,20)
-            .textFieldStyle(.plain)
-    }
-     
+struct TextStyle: TextFieldStyle{
+    //@Binding var focused: Bool
+    func _body(configuration: TextField<Self._Label>) -> some View {
+        configuration
+            .padding(10)
+            //.background(Color.ww)
+            .cornerRadius(8)
+            
+        }
 }
-*/

@@ -1,13 +1,13 @@
 //
-//  MyPostPageView.swift
+//  CategoryPageView.swift
 //  Haru3cut
 //
-//  Created by HanGeunyoung on 2022/03/03.
+//  Created by HanGeunyoung on 2022/03/10.
 //
 
 import SwiftUI
 
-struct MyPostPageView: View {
+struct CategoryPageView: View {
  
     var body: some View {
         NavigationView{
@@ -17,26 +17,25 @@ struct MyPostPageView: View {
                         NavigationLink(destination: RegisterPageView(), label:{Image("profile")})
                            .offset(y:3)
                            .frame(width: 50, height: 50, alignment: .leading)
-                           .border(.black)
-                           .cornerRadius(20)
                         Text("닉네임")
                             .font(.title3)
                             .fontWeight(.semibold)
                         Spacer()
                         NavigationLink(destination: RegisterPageView(), label:{Image("search")})
                            .offset(y:3)
-                           .frame(width: 70, height: 70, alignment: .leading)
+                           .frame(width: 50, height: 50, alignment: .leading)
                         NavigationLink(destination: RegisterPageView(), label:{Image("dots")})
                            .offset(y:3)
-                           .frame(width: 70, height: 70, alignment: .leading)
+                           .frame(width: 50, height: 50, alignment: .leading)
                         
                     }
                         
-                    }
+                    } .padding(.top, 50)
+                    .padding(0)
                     .frame(height:100)
                 Spacer()
                 
-                Text("My Post")
+                Text("Category")
                 
                 Spacer()
                 
@@ -81,8 +80,10 @@ struct MyPostPageView: View {
                         
                     }
                         
-                    }
+                    } .padding(.bottom, 50)
+                    .padding(0)
                     .frame(height:100)
+                
                 
                 }
                 .padding()
@@ -93,9 +94,9 @@ struct MyPostPageView: View {
    }
 
 #if DEBUG
-struct MyPostPageView_Previews: PreviewProvider {
+struct CategoryPageView_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterPageView()
+        CategoryPageView()
     }
 }
 #endif

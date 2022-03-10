@@ -14,7 +14,8 @@ struct LoginPageView: View {
     @State var email: String = ""
     @State var password: String = ""
     
-    @State var clickCheck = false
+    @State var textClick = false
+    @State var buttonClick = false
     
     var body: some View {
         
@@ -40,7 +41,10 @@ struct LoginPageView: View {
                 //.fixedSize(horizontal: true, vertical: false)
                 
             } .padding()
+                .padding(.bottom,100)
+                .ignoresSafeArea()                
         } .navigationBarHidden(true)
+            
     }
 }
 
@@ -60,44 +64,6 @@ struct AppNameText: View {
             .padding(.bottom, 70)
             .foregroundColor(Color.pp)
     }
-}
-
-struct buttonDarkStyle: ButtonStyle {
-    
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .foregroundColor(.white)
-            .frame(height: 44)
-            .frame(maxWidth: .infinity)
-            .background(Color.pp)
-            .cornerRadius(8)
-    }
-}
-
-struct buttonLightStyle: ButtonStyle {
-    
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .foregroundColor(Color.pp)
-            .frame(height: 44)
-            .frame(maxWidth: .infinity)
-            .background(Color.ww)
-            .cornerRadius(8)
-    }
-}
-
-struct TextStyle: TextFieldStyle{
-    func _body(configuration: TextField<Self._Label>) -> some View {
-        configuration
-            .padding(10)
-            //.background(Color.ww)
-            .cornerRadius(8)
-        }
-}
-
-extension Color {
-    static let pp = Color(red:102/255, green:103/255, blue:171/255)
-    static let ww = Color(red: 240/255, green: 240/255, blue: 240/255)
 }
 
 func buttonTest(){
