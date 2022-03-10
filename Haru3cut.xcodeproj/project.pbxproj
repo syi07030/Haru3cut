@@ -14,9 +14,16 @@
 		A7F1000627D10D06005B1D2A /* MyPostPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1000527D10D06005B1D2A /* MyPostPageView.swift */; };
 		A7F1000727D10D06005B1D2A /* MyPostPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1000527D10D06005B1D2A /* MyPostPageView.swift */; };
 		A7F1000827D10D06005B1D2A /* MyPostPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1000527D10D06005B1D2A /* MyPostPageView.swift */; };
-		A7F1001027D30B65005B1D2A /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = A7F1000F27D30B65005B1D2A /* back.png */; };
-		A7F1001127D30B65005B1D2A /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = A7F1000F27D30B65005B1D2A /* back.png */; };
-		A7F1001227D30B65005B1D2A /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = A7F1000F27D30B65005B1D2A /* back.png */; };
+		A7F1001527D5A077005B1D2A /* ButtonSmallDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1001427D5A077005B1D2A /* ButtonSmallDesign.swift */; };
+		A7F1001627D5A077005B1D2A /* ButtonSmallDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1001427D5A077005B1D2A /* ButtonSmallDesign.swift */; };
+		A7F1001727D5A077005B1D2A /* ButtonSmallDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1001427D5A077005B1D2A /* ButtonSmallDesign.swift */; };
+		A7F1001927D5A083005B1D2A /* ButtonBigDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1001827D5A083005B1D2A /* ButtonBigDesign.swift */; };
+		A7F1001A27D5A083005B1D2A /* ButtonBigDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1001827D5A083005B1D2A /* ButtonBigDesign.swift */; };
+		A7F1001B27D5A083005B1D2A /* ButtonBigDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1001827D5A083005B1D2A /* ButtonBigDesign.swift */; };
+		A7F1001D27D5A0A5005B1D2A /* TextFieldDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1001C27D5A0A5005B1D2A /* TextFieldDesign.swift */; };
+		A7F1001E27D5A0A5005B1D2A /* TextFieldDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1001C27D5A0A5005B1D2A /* TextFieldDesign.swift */; };
+		A7F1001F27D5A0A5005B1D2A /* TextFieldDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1001C27D5A0A5005B1D2A /* TextFieldDesign.swift */; };
+		A7F1002127D88C43005B1D2A /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1002027D88C43005B1D2A /* Data.swift */; };
 		A7F1FFC227CF5E64005B1D2A /* Haru3cutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1FFC127CF5E64005B1D2A /* Haru3cutApp.swift */; };
 		A7F1FFC427CF5E64005B1D2A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1FFC327CF5E64005B1D2A /* ContentView.swift */; };
 		A7F1FFC627CF5E66005B1D2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7F1FFC527CF5E66005B1D2A /* Assets.xcassets */; };
@@ -56,7 +63,10 @@
 /* Begin PBXFileReference section */
 		A7F1000127D10CD8005B1D2A /* AccountSelectPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSelectPageView.swift; sourceTree = "<group>"; };
 		A7F1000527D10D06005B1D2A /* MyPostPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostPageView.swift; sourceTree = "<group>"; };
-		A7F1000F27D30B65005B1D2A /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		A7F1001427D5A077005B1D2A /* ButtonSmallDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSmallDesign.swift; sourceTree = "<group>"; };
+		A7F1001827D5A083005B1D2A /* ButtonBigDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonBigDesign.swift; sourceTree = "<group>"; };
+		A7F1001C27D5A0A5005B1D2A /* TextFieldDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDesign.swift; sourceTree = "<group>"; };
+		A7F1002027D88C43005B1D2A /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		A7F1FFBE27CF5E64005B1D2A /* Haru3cut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Haru3cut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7F1FFC127CF5E64005B1D2A /* Haru3cutApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haru3cutApp.swift; sourceTree = "<group>"; };
 		A7F1FFC327CF5E64005B1D2A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -107,9 +117,18 @@
 				A7F1FFFD27D10CC1005B1D2A /* RegisterPageView.swift */,
 				A7F1000127D10CD8005B1D2A /* AccountSelectPageView.swift */,
 				A7F1000527D10D06005B1D2A /* MyPostPageView.swift */,
-				A7F1000F27D30B65005B1D2A /* back.png */,
 			);
 			path = PageView;
+			sourceTree = "<group>";
+		};
+		A7F1001327D5A051005B1D2A /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				A7F1001427D5A077005B1D2A /* ButtonSmallDesign.swift */,
+				A7F1001827D5A083005B1D2A /* ButtonBigDesign.swift */,
+				A7F1001C27D5A0A5005B1D2A /* TextFieldDesign.swift */,
+			);
+			path = Design;
 			sourceTree = "<group>";
 		};
 		A7F1FFB527CF5E64005B1D2A = {
@@ -137,7 +156,9 @@
 			isa = PBXGroup;
 			children = (
 				A7F1FFC127CF5E64005B1D2A /* Haru3cutApp.swift */,
+				A7F1002027D88C43005B1D2A /* Data.swift */,
 				A7F1000927D10D12005B1D2A /* PageView */,
+				A7F1001327D5A051005B1D2A /* Design */,
 				A7F1FFC527CF5E66005B1D2A /* Assets.xcassets */,
 				A7F1FFCA27CF5E66005B1D2A /* Persistence.swift */,
 				A7F1FFCC27CF5E66005B1D2A /* Haru3cut.xcdatamodeld */,
@@ -276,7 +297,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7F1001027D30B65005B1D2A /* back.png in Resources */,
 				A7F1FFF227D108C3005B1D2A /* .swiftlint.yml in Resources */,
 				A7F1FFC927CF5E66005B1D2A /* Preview Assets.xcassets in Resources */,
 				A7F1FFC627CF5E66005B1D2A /* Assets.xcassets in Resources */,
@@ -287,7 +307,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7F1001127D30B65005B1D2A /* back.png in Resources */,
 				A7F1FFF327D108C3005B1D2A /* .swiftlint.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,7 +315,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7F1001227D30B65005B1D2A /* back.png in Resources */,
 				A7F1FFF427D108C3005B1D2A /* .swiftlint.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,9 +347,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7F1FFCE27CF5E66005B1D2A /* Haru3cut.xcdatamodeld in Sources */,
+				A7F1001D27D5A0A5005B1D2A /* TextFieldDesign.swift in Sources */,
+				A7F1001527D5A077005B1D2A /* ButtonSmallDesign.swift in Sources */,
 				A7F1FFCB27CF5E66005B1D2A /* Persistence.swift in Sources */,
 				A7F1FFFE27D10CC1005B1D2A /* RegisterPageView.swift in Sources */,
+				A7F1001927D5A083005B1D2A /* ButtonBigDesign.swift in Sources */,
 				A7F1000627D10D06005B1D2A /* MyPostPageView.swift in Sources */,
+				A7F1002127D88C43005B1D2A /* Data.swift in Sources */,
 				A7F1FFC427CF5E64005B1D2A /* ContentView.swift in Sources */,
 				A7F1FFFA27D10CB0005B1D2A /* LoginPageView.swift in Sources */,
 				A7F1000227D10CD8005B1D2A /* AccountSelectPageView.swift in Sources */,
@@ -344,8 +366,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7F1FFD827CF5E66005B1D2A /* Haru3cutTests.swift in Sources */,
+				A7F1001627D5A077005B1D2A /* ButtonSmallDesign.swift in Sources */,
 				A7F1000727D10D06005B1D2A /* MyPostPageView.swift in Sources */,
+				A7F1001E27D5A0A5005B1D2A /* TextFieldDesign.swift in Sources */,
 				A7F1FFFB27D10CB0005B1D2A /* LoginPageView.swift in Sources */,
+				A7F1001A27D5A083005B1D2A /* ButtonBigDesign.swift in Sources */,
 				A7F1FFFF27D10CC1005B1D2A /* RegisterPageView.swift in Sources */,
 				A7F1000327D10CD8005B1D2A /* AccountSelectPageView.swift in Sources */,
 			);
@@ -355,10 +380,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7F1001B27D5A083005B1D2A /* ButtonBigDesign.swift in Sources */,
 				A7F1FFE427CF5E66005B1D2A /* Haru3cutUITestsLaunchTests.swift in Sources */,
+				A7F1001727D5A077005B1D2A /* ButtonSmallDesign.swift in Sources */,
 				A7F1FFE227CF5E66005B1D2A /* Haru3cutUITests.swift in Sources */,
 				A7F1000427D10CD8005B1D2A /* AccountSelectPageView.swift in Sources */,
 				A7F1000827D10D06005B1D2A /* MyPostPageView.swift in Sources */,
+				A7F1001F27D5A0A5005B1D2A /* TextFieldDesign.swift in Sources */,
 				A7F1000027D10CC1005B1D2A /* RegisterPageView.swift in Sources */,
 				A7F1FFFC27D10CB0005B1D2A /* LoginPageView.swift in Sources */,
 			);
@@ -501,6 +529,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Haru3cut/Preview Content\"";
@@ -519,6 +548,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Haru3cut;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -6,9 +6,23 @@
 //
 
 import SwiftUI
-import CoreData
-/*
-struct ContentView: View {
 
+struct MyPostPageView: View {
+
+ 
+ var body: some View {
+     VStack {
+         
+         Text("Main")
+         
+     }
+ }
 }
-*/
+
+#if DEBUG
+struct MyPostPageView_Previews: PreviewProvider {
+    static var previews: some View {
+        RegisterPageView()
+    }
+}
+#endif

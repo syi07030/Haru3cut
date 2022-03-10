@@ -15,34 +15,30 @@ struct RegisterPageView: View {
  @State var phoneNumber: String = ""
  
  var body: some View {
-     VStack {
-         topView()
-         TextField("닉네임", text: $nickName)
-             .padding()
-             .padding(.bottom,20)
-             .textFieldStyle(.plain)
-         TextField("E-mail", text: $email)
-             .padding()
-             .padding(.bottom,20)
-             .textFieldStyle(.plain)
-         SecureField("Password", text: $password)
-             .padding()
-             .padding(.bottom,20)
-             .textFieldStyle(.plain)
-         SecureField("Password check", text: $passwordCheck)
-             .padding()
-             .padding(.bottom,20)
-             .textFieldStyle(.plain)
-         TextField("전화번호", text: $phoneNumber)
-             .padding()
-             .padding(.bottom,20)
-             .textFieldStyle(.plain)
-         Button("완료", action: buttonTest)
-             .padding()
-             //.border(.black)
-         
-     }
- }
+     NavigationView{
+         VStack {
+             topView()
+             TextField("닉네임", text: $nickName)
+                 .textFieldStyle(TextStyle())
+                 .padding(.bottom,10)
+             TextField("E-mail", text: $email)
+                 .textFieldStyle(TextStyle())
+                 .padding(.bottom,10)
+             SecureField("Password", text: $password)
+                 .textFieldStyle(TextStyle())
+                 .padding(.bottom,10)
+             SecureField("Password check", text: $passwordCheck)
+                 .textFieldStyle(TextStyle())
+                 .padding(.bottom,10)
+             TextField("전화번호", text: $phoneNumber)
+                 .textFieldStyle(TextStyle())
+                 .padding(.bottom,30)
+             NavigationLink(destination: LoginPageView(), label:{Text("완료")})
+                 .buttonStyle(buttonDarkStyle())
+             
+         } .padding()
+     } .navigationBarHidden(true)
+}
 }
 
 #if DEBUG
@@ -59,8 +55,8 @@ struct topView: View {
                 alignment: .top,
                 spacing: 10
             ) {
-                Image("back")
-                    .padding()
+                //Image("back")
+                //    .padding()
                 
                 Text("회원가입")
                       .font(.largeTitle)
