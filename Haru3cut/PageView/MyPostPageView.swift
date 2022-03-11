@@ -68,7 +68,7 @@ struct MyPostPageView: View {
                         
                         Spacer()
                         
-                        NavigationLink(destination: CategoryPageView(),
+                        NavigationLink(destination: PartyPageView(),
                                        label:{
                             VStack{
                                 Image("category")
@@ -83,7 +83,6 @@ struct MyPostPageView: View {
                         
                     }
                     .frame(height:100)
-                
                 }
                 .padding()
                 .ignoresSafeArea()

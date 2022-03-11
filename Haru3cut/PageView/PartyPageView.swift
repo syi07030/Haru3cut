@@ -1,13 +1,13 @@
 //
-//  CategoryPageView.swift
+//  PartyPageView.swift
 //  Haru3cut
 //
-//  Created by HanGeunyoung on 2022/03/10.
+//  Created by HanGeunyoung on 2022/03/11.
 //
 
 import SwiftUI
 
-struct CategoryPageView: View {
+struct PartyPageView: View {
  
     var body: some View {
         NavigationView{
@@ -35,7 +35,7 @@ struct CategoryPageView: View {
                     .frame(height:100)
                 Spacer()
                 
-                Text("Category")
+                Text("Party")
                 
                 Spacer()
                 
@@ -67,7 +67,7 @@ struct CategoryPageView: View {
                         
                         Spacer()
                         
-                        NavigationLink(destination: CategoryPageView(),
+                        NavigationLink(destination: PartyPageView(),
                                        label:{
                             VStack{
                                 Image("category")
@@ -94,9 +94,9 @@ struct CategoryPageView: View {
    }
 
 #if DEBUG
-struct CategoryPageView_Previews: PreviewProvider {
+struct PartyPageView_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryPageView()
+        PartyPageView()
     }
 }
 #endif

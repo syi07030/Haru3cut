@@ -20,9 +20,6 @@
 		A7F1002927D9ECF9005B1D2A /* FriendPostPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1002827D9ECF9005B1D2A /* FriendPostPageView.swift */; };
 		A7F1002A27D9ECF9005B1D2A /* FriendPostPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1002827D9ECF9005B1D2A /* FriendPostPageView.swift */; };
 		A7F1002B27D9ECF9005B1D2A /* FriendPostPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1002827D9ECF9005B1D2A /* FriendPostPageView.swift */; };
-		A7F1002D27D9ED11005B1D2A /* CategoryPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1002C27D9ED11005B1D2A /* CategoryPageView.swift */; };
-		A7F1002E27D9ED11005B1D2A /* CategoryPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1002C27D9ED11005B1D2A /* CategoryPageView.swift */; };
-		A7F1002F27D9ED11005B1D2A /* CategoryPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1002C27D9ED11005B1D2A /* CategoryPageView.swift */; };
 		A7F1003127D9FAC1005B1D2A /* RegisterLoginCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1003027D9FAC1005B1D2A /* RegisterLoginCheck.swift */; };
 		A7F1003227D9FAC1005B1D2A /* RegisterLoginCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1003027D9FAC1005B1D2A /* RegisterLoginCheck.swift */; };
 		A7F1003327D9FAC1005B1D2A /* RegisterLoginCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1003027D9FAC1005B1D2A /* RegisterLoginCheck.swift */; };
@@ -32,6 +29,9 @@
 		A7F1003927DA0D54005B1D2A /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1003827DA0D54005B1D2A /* Color.swift */; };
 		A7F1003A27DA0D54005B1D2A /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1003827DA0D54005B1D2A /* Color.swift */; };
 		A7F1003B27DA0D54005B1D2A /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1003827DA0D54005B1D2A /* Color.swift */; };
+		A7F1003D27DB7658005B1D2A /* PartyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1003C27DB7657005B1D2A /* PartyPageView.swift */; };
+		A7F1003E27DB7658005B1D2A /* PartyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1003C27DB7657005B1D2A /* PartyPageView.swift */; };
+		A7F1003F27DB7658005B1D2A /* PartyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1003C27DB7657005B1D2A /* PartyPageView.swift */; };
 		A7F1FFC227CF5E64005B1D2A /* Haru3cutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1FFC127CF5E64005B1D2A /* Haru3cutApp.swift */; };
 		A7F1FFC427CF5E64005B1D2A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1FFC327CF5E64005B1D2A /* ContentView.swift */; };
 		A7F1FFC627CF5E66005B1D2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7F1FFC527CF5E66005B1D2A /* Assets.xcassets */; };
@@ -73,10 +73,10 @@
 		A7F1000527D10D06005B1D2A /* MyPostPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostPageView.swift; sourceTree = "<group>"; };
 		A7F1001C27D5A0A5005B1D2A /* TextFieldDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDesign.swift; sourceTree = "<group>"; };
 		A7F1002827D9ECF9005B1D2A /* FriendPostPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendPostPageView.swift; sourceTree = "<group>"; };
-		A7F1002C27D9ED11005B1D2A /* CategoryPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPageView.swift; sourceTree = "<group>"; };
 		A7F1003027D9FAC1005B1D2A /* RegisterLoginCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterLoginCheck.swift; sourceTree = "<group>"; };
 		A7F1003427DA0D39005B1D2A /* ButtonDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDesign.swift; sourceTree = "<group>"; };
 		A7F1003827DA0D54005B1D2A /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		A7F1003C27DB7657005B1D2A /* PartyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyPageView.swift; sourceTree = "<group>"; };
 		A7F1FFBE27CF5E64005B1D2A /* Haru3cut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Haru3cut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7F1FFC127CF5E64005B1D2A /* Haru3cutApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haru3cutApp.swift; sourceTree = "<group>"; };
 		A7F1FFC327CF5E64005B1D2A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -128,7 +128,7 @@
 				A7F1000127D10CD8005B1D2A /* AccountSelectPageView.swift */,
 				A7F1000527D10D06005B1D2A /* MyPostPageView.swift */,
 				A7F1002827D9ECF9005B1D2A /* FriendPostPageView.swift */,
-				A7F1002C27D9ED11005B1D2A /* CategoryPageView.swift */,
+				A7F1003C27DB7657005B1D2A /* PartyPageView.swift */,
 			);
 			path = PageView;
 			sourceTree = "<group>";
@@ -364,8 +364,8 @@
 				A7F1FFCB27CF5E66005B1D2A /* Persistence.swift in Sources */,
 				A7F1FFFE27D10CC1005B1D2A /* RegisterPageView.swift in Sources */,
 				A7F1000627D10D06005B1D2A /* MyPostPageView.swift in Sources */,
-				A7F1002D27D9ED11005B1D2A /* CategoryPageView.swift in Sources */,
 				A7F1FFC427CF5E64005B1D2A /* ContentView.swift in Sources */,
+				A7F1003D27DB7658005B1D2A /* PartyPageView.swift in Sources */,
 				A7F1FFFA27D10CB0005B1D2A /* LoginPageView.swift in Sources */,
 				A7F1003927DA0D54005B1D2A /* Color.swift in Sources */,
 				A7F1000227D10CD8005B1D2A /* AccountSelectPageView.swift in Sources */,
@@ -381,12 +381,12 @@
 			files = (
 				A7F1FFD827CF5E66005B1D2A /* Haru3cutTests.swift in Sources */,
 				A7F1003227D9FAC1005B1D2A /* RegisterLoginCheck.swift in Sources */,
+				A7F1003E27DB7658005B1D2A /* PartyPageView.swift in Sources */,
 				A7F1003A27DA0D54005B1D2A /* Color.swift in Sources */,
 				A7F1000727D10D06005B1D2A /* MyPostPageView.swift in Sources */,
 				A7F1001E27D5A0A5005B1D2A /* TextFieldDesign.swift in Sources */,
 				A7F1FFFB27D10CB0005B1D2A /* LoginPageView.swift in Sources */,
 				A7F1002A27D9ECF9005B1D2A /* FriendPostPageView.swift in Sources */,
-				A7F1002E27D9ED11005B1D2A /* CategoryPageView.swift in Sources */,
 				A7F1FFFF27D10CC1005B1D2A /* RegisterPageView.swift in Sources */,
 				A7F1000327D10CD8005B1D2A /* AccountSelectPageView.swift in Sources */,
 				A7F1003627DA0D39005B1D2A /* ButtonDesign.swift in Sources */,
@@ -397,13 +397,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7F1003F27DB7658005B1D2A /* PartyPageView.swift in Sources */,
 				A7F1FFE427CF5E66005B1D2A /* Haru3cutUITestsLaunchTests.swift in Sources */,
 				A7F1FFE227CF5E66005B1D2A /* Haru3cutUITests.swift in Sources */,
 				A7F1000427D10CD8005B1D2A /* AccountSelectPageView.swift in Sources */,
 				A7F1002B27D9ECF9005B1D2A /* FriendPostPageView.swift in Sources */,
 				A7F1000827D10D06005B1D2A /* MyPostPageView.swift in Sources */,
 				A7F1003B27DA0D54005B1D2A /* Color.swift in Sources */,
-				A7F1002F27D9ED11005B1D2A /* CategoryPageView.swift in Sources */,
 				A7F1001F27D5A0A5005B1D2A /* TextFieldDesign.swift in Sources */,
 				A7F1000027D10CC1005B1D2A /* RegisterPageView.swift in Sources */,
 				A7F1FFFC27D10CB0005B1D2A /* LoginPageView.swift in Sources */,

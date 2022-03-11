@@ -24,17 +24,6 @@ struct RegisterPageView: View {
                          .font(.largeTitle)
                          .fontWeight(.semibold)
                      
-                     HStack{
-                         NavigationLink(destination: LoginPageView(), label:{
-                             Image("back")
-                             
-                         })
-                            .offset(y:3)
-                            .frame(width: 30, height: 30, alignment: .center)
-                             
-                         Spacer()
-                     }
-                     
                  }
                  .padding(.top, 50)
              }
@@ -62,7 +51,7 @@ struct RegisterPageView: View {
              
          } .padding()
              .ignoresSafeArea()
-     } //.navigationBarHidden(true)
+     } .navigationBarHidden(true)
 }
 }
 

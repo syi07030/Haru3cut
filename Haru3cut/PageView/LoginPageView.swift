@@ -22,7 +22,12 @@ struct LoginPageView: View {
         NavigationView{
             VStack {
                 AppNameText()
-                TextField("E-mail", text: $email)
+                TextField("E-mail", text: $email, onEditingChanged: { (changed) in
+                    if changed{
+                        
+                    }
+                    else{}
+                })
                     .textFieldStyle(TextStyle())
                     .padding(.bottom,10)
                 SecureField("Password", text: $password)

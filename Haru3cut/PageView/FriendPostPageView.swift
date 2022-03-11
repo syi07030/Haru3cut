@@ -67,7 +67,7 @@ struct FriendPostPageView: View {
                         
                         Spacer()
                         
-                        NavigationLink(destination: CategoryPageView(),
+                        NavigationLink(destination: PartyPageView(),
                                        label:{
                             VStack{
                                 Image("category")
