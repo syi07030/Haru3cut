@@ -13,9 +13,10 @@ struct RegisterPageView: View {
  @State var password: String = ""
  @State var passwordCheck: String = ""
  @State var phoneNumber: String = ""
+    
+@State private var showingAlert = false
  
  var body: some View {
-     NavigationView{
          VStack {
              VStack(alignment:.center) {
                  
@@ -45,13 +46,22 @@ struct RegisterPageView: View {
              TextField("전화번호", text: $phoneNumber)
                  .textFieldStyle(TextStyle())
                  .padding(.bottom,90)
-             NavigationLink(destination: LoginPageView(), label:{Text("완료")})
-                 .buttonStyle(buttonDarkStyle())
-                 .padding(.bottom, 30)
+             Button("완료",action: {showingAlert = true})
+                 .buttonStyle(buttonDarkStyle)
+             .alert("회원가입 완료", isPresented: $showingAlert){
+                 Button("OK") {
+                 }
+                 
+             } message: {
+                 Text("다시 로그인 해주시기 바랍니다")
+             }
+             
+//             NavigationLink(destination: LoginPageView(), label:{Text("완료")})
+//                 .buttonStyle(buttonDarkStyle())
+//                 .padding(.bottom, 30)
              
          } .padding()
-             .ignoresSafeArea()
-     } .navigationBarHidden(true)
+            .ignoresSafeArea()
 }
 }
 

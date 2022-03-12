@@ -17,6 +17,8 @@ struct LoginPageView: View {
     @State var textClick = false
     @State var buttonClick = false
     
+    @State var isActive : Bool = false
+    
     var body: some View {
         
         NavigationView{
@@ -36,8 +38,9 @@ struct LoginPageView: View {
                     
                 HStack(spacing:20){
                     
-                    NavigationLink(destination: RegisterPageView(), label:{Text("회원가입")})
+                    NavigationLink(destination: RegisterPageView()(rootIsActive: self.$isActive), isActive: self.$isActive, label:{Text("회원가입")})
                         .buttonStyle(buttonDarkStyle())
+                        .isDetailLink(false)
                     
                     NavigationLink(destination: MyPostPageView(), label:{Text("로그인")})
                         .buttonStyle(buttonLightStyle())
@@ -48,7 +51,9 @@ struct LoginPageView: View {
             } .padding()
                 .padding(.bottom,100)
                 .ignoresSafeArea()                
-        } .navigationBarHidden(true)
+        } //.navigationBarHidden(true)
+        .accentColor(Color.black)
+        .navigationTitle(Text(""))
             
     }
 }
