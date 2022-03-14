@@ -6,8 +6,6 @@
 //
 
 import SwiftUI
-import Foundation
-import UIKit
 
 struct LoginPageView: View {
     
@@ -17,7 +15,7 @@ struct LoginPageView: View {
     @State var textClick = false
     @State var buttonClick = false
     
-    @State var isActive : Bool = false
+    @State var gotoRegister = false
     
     var body: some View {
         
@@ -33,12 +31,26 @@ struct LoginPageView: View {
                     
                 HStack(spacing:20){
                     
+                    Button("회원가입"){
+                        gotoRegister = true
+                    }
+                    .buttonStyle(buttonDarkStyle())
+                    .background(
+                        NavigationLink(
+                            destination: RegisterPageView(gotoLogin: $gotoRegister),
+                            isActive: $gotoRegister,
+                            label: {EmptyView()}
+                        )
+                            .isDetailLink(false)
+                    )
+                    
+                    /*
                     NavigationLink(
                         "회원가입", destination: RegisterPageView(shouldPopToRootView: self.$isActive), isActive: self.$isActive
                         )
                         .buttonStyle(buttonDarkStyle())
                       //  .isdetail
-                    
+                    */
                     NavigationLink(destination: MyPostPageView(), label:{Text("로그인")})
                         .buttonStyle(buttonLightStyle())
                 }
