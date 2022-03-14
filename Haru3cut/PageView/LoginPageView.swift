@@ -24,12 +24,7 @@ struct LoginPageView: View {
         NavigationView{
             VStack {
                 AppNameText()
-                TextField("E-mail", text: $email, onEditingChanged: { (changed) in
-                    if changed{
-                        
-                    }
-                    else{}
-                })
+                TextField("E-mail", text: $email)
                     .textFieldStyle(TextStyle())
                     .padding(.bottom,10)
                 SecureField("Password", text: $password)
@@ -38,9 +33,11 @@ struct LoginPageView: View {
                     
                 HStack(spacing:20){
                     
-                    NavigationLink(destination: RegisterPageView()(rootIsActive: self.$isActive), isActive: self.$isActive, label:{Text("회원가입")})
+                    NavigationLink(
+                        "회원가입", destination: RegisterPageView(shouldPopToRootView: self.$isActive), isActive: self.$isActive
+                        )
                         .buttonStyle(buttonDarkStyle())
-                        .isDetailLink(false)
+                      //  .isdetail
                     
                     NavigationLink(destination: MyPostPageView(), label:{Text("로그인")})
                         .buttonStyle(buttonLightStyle())
@@ -50,13 +47,16 @@ struct LoginPageView: View {
                 
             } .padding()
                 .padding(.bottom,100)
-                .ignoresSafeArea()                
+                .ignoresSafeArea()
+            
         } //.navigationBarHidden(true)
         .accentColor(Color.black)
         .navigationTitle(Text(""))
-            
+        
     }
+            
 }
+
 
 #if DEBUG
 struct LoginPageView_Previews: PreviewProvider {

@@ -14,7 +14,7 @@ struct MyPostPageView: View {
             VStack {
                 VStack(alignment:.center) {
                     HStack{
-                        NavigationLink(destination: RegisterPageView(), label:{Image("profile")})
+                        NavigationLink(destination: LoginPageView(), label:{Image("profile")})
                            .offset(y:3)
                            .frame(width: 50, height: 50, alignment: .leading)
                            .border(.black)
@@ -23,10 +23,10 @@ struct MyPostPageView: View {
                             .font(.title3)
                             .fontWeight(.semibold)
                         Spacer()
-                        NavigationLink(destination: RegisterPageView(), label:{Image("search")})
+                        NavigationLink(destination: LoginPageView(), label:{Image("search")})
                            .offset(y:3)
                            .frame(width: 70, height: 70, alignment: .leading)
-                        NavigationLink(destination: RegisterPageView(), label:{Image("dots")})
+                        NavigationLink(destination: LoginPageView(), label:{Image("dots")})
                            .offset(y:3)
                            .frame(width: 70, height: 70, alignment: .leading)
                         
@@ -91,6 +91,7 @@ struct MyPostPageView: View {
         }
    }
 
+/*
 #if DEBUG
 struct MyPostPageView_Previews: PreviewProvider {
     static var previews: some View {
@@ -98,3 +99,4 @@ struct MyPostPageView_Previews: PreviewProvider {
     }
 }
 #endif
+*/

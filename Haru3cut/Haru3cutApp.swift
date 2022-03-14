@@ -13,7 +13,7 @@ struct Haru3cutApp: App {
 
     var body: some Scene {
         WindowGroup {
-            LoginPageView()
+            View1()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

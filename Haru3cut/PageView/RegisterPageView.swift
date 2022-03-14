@@ -15,6 +15,7 @@ struct RegisterPageView: View {
  @State var phoneNumber: String = ""
     
 @State private var showingAlert = false
+@Binding var shouldPopToRootView: Bool
  
  var body: some View {
          VStack {
@@ -47,11 +48,9 @@ struct RegisterPageView: View {
                  .textFieldStyle(TextStyle())
                  .padding(.bottom,90)
              Button("완료",action: {showingAlert = true})
-                 .buttonStyle(buttonDarkStyle)
+             //    .buttonStyle(buttonDarkStyle)
              .alert("회원가입 완료", isPresented: $showingAlert){
-                 Button("OK") {
-                 }
-                 
+                 Button("OK", action: { self.shouldPopToRootView = false })
              } message: {
                  Text("다시 로그인 해주시기 바랍니다")
              }
@@ -65,6 +64,7 @@ struct RegisterPageView: View {
 }
 }
 
+/*
 #if DEBUG
 struct RegisterPageView_Previews: PreviewProvider {
     static var previews: some View {
@@ -72,7 +72,7 @@ struct RegisterPageView_Previews: PreviewProvider {
     }
 }
 #endif
-
+*/
 /*
 struct topView: View {
     var body: some View {
