@@ -9,12 +9,16 @@ import Foundation
 import SwiftUI
 
 struct TextStyle: TextFieldStyle{
-    //@Binding var focused: Bool
+    @Binding var focused: Bool
     func _body(configuration: TextField<Self._Label>) -> some View {
         configuration
             .padding(10)
             //.background(Color.ww)
             .cornerRadius(8)
+            .background(
+                Rectangle()
+                    .stroke(focused ? Color.error : Color.ww, lineWidth: 2)
+            )
             
         }
 }

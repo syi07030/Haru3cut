@@ -84,7 +84,6 @@ struct PartyPageView: View {
                     .padding(0)
                     .frame(height:100)
                 
-                
                 }
                 .padding()
                 .ignoresSafeArea()

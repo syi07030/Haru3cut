@@ -9,6 +9,8 @@ import SwiftUI
 
 struct LoginPageView: View {
     
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     @State var email: String = ""
     @State var password: String = ""
     
@@ -16,17 +18,28 @@ struct LoginPageView: View {
     @State var buttonClick = false
     
     @State var gotoRegister = false
-    
+    @FocusState private var isFocused: Bool
+        
     var body: some View {
         
         NavigationView{
             VStack {
                 AppNameText()
-                TextField("E-mail", text: $email)
-                    .textFieldStyle(TextStyle())
+//                TextField("E-mail", text: $email, onEditingChanged: { edit in self.textClick = edit }
+//                )
+                TextField("E-mail", text:$email)
+                    .focused($isFocused)
+                    .onChange(of: isFocused) { isFocused in
+                    .textFieldStyle(TextStyle(focused: isFocused))
+                    }
+                //    .textFieldStyle(TextStyle(focused: $textClick))
                     .padding(.bottom,10)
+//                    .overlay(
+//                        RoundedRectangle(cornerRadius: 40)
+//                            .stroke(Color.error, lineWidth: 2)
+//                    )
                 SecureField("Password", text: $password)
-                    .textFieldStyle(TextStyle())
+                    .textFieldStyle(TextStyle(focused: $textClick))
                     .padding(.bottom,30)
                     
                 HStack(spacing:20){
@@ -42,6 +55,7 @@ struct LoginPageView: View {
                             label: {EmptyView()}
                         )
                             .isDetailLink(false)
+                            .navigationBarTitle("")
                     )
                     
                     /*
@@ -61,14 +75,12 @@ struct LoginPageView: View {
                 .padding(.bottom,100)
                 .ignoresSafeArea()
             
-        } //.navigationBarHidden(true)
+        }
         .accentColor(Color.black)
-        .navigationTitle(Text(""))
         
     }
             
 }
-
 
 #if DEBUG
 struct LoginPageView_Previews: PreviewProvider {
@@ -81,6 +93,7 @@ struct LoginPageView_Previews: PreviewProvider {
 struct AppNameText: View {
     var body: some View{
         return Text("하루세컷")
+            .tracking(15)
             .font(.largeTitle)
             .fontWeight(.semibold)
             .padding(.bottom, 70)
