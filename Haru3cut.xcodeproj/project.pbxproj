@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A7B6E2DF27DF8B8E000D8B6F /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B6E2DE27DF8B8E000D8B6F /* test.swift */; };
+		A7B6E2E327E18703000D8B6F /* FocusableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B6E2E227E18703000D8B6F /* FocusableTextField.swift */; };
 		A7F1000027D10CC1005B1D2A /* RegisterPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1FFFD27D10CC1005B1D2A /* RegisterPageView.swift */; };
 		A7F1000227D10CD8005B1D2A /* AccountSelectPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1000127D10CD8005B1D2A /* AccountSelectPageView.swift */; };
 		A7F1000327D10CD8005B1D2A /* AccountSelectPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1000127D10CD8005B1D2A /* AccountSelectPageView.swift */; };
@@ -71,6 +72,7 @@
 
 /* Begin PBXFileReference section */
 		A7B6E2DE27DF8B8E000D8B6F /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
+		A7B6E2E227E18703000D8B6F /* FocusableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusableTextField.swift; sourceTree = "<group>"; };
 		A7F1000127D10CD8005B1D2A /* AccountSelectPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSelectPageView.swift; sourceTree = "<group>"; };
 		A7F1000527D10D06005B1D2A /* MyPostPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostPageView.swift; sourceTree = "<group>"; };
 		A7F1001C27D5A0A5005B1D2A /* TextFieldDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDesign.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				A7F1001C27D5A0A5005B1D2A /* TextFieldDesign.swift */,
 				A7F1003427DA0D39005B1D2A /* ButtonDesign.swift */,
 				A7F1003827DA0D54005B1D2A /* Color.swift */,
+				A7B6E2E227E18703000D8B6F /* FocusableTextField.swift */,
 			);
 			path = Design;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7B6E2E327E18703000D8B6F /* FocusableTextField.swift in Sources */,
 				A7F1002927D9ECF9005B1D2A /* FriendPostPageView.swift in Sources */,
 				A7F1FFCE27CF5E66005B1D2A /* Haru3cut.xcdatamodeld in Sources */,
 				A7F1001D27D5A0A5005B1D2A /* TextFieldDesign.swift in Sources */,

@@ -17,29 +17,64 @@ struct LoginPageView: View {
     @State var textClick = false
     @State var buttonClick = false
     
+    @State var emailClick = false
+    @State var passwordclick = false
+    
     @State var gotoRegister = false
-    @FocusState private var isFocused: Bool
+    
+    @State var emailMessage = " "
+    @State var emailMessageColor = Color.error
+    
+    @State var passwordMessage = " "
+    @State var passwordMessageColor = Color.error
         
     var body: some View {
         
         NavigationView{
             VStack {
                 AppNameText()
-//                TextField("E-mail", text: $email, onEditingChanged: { edit in self.textClick = edit }
-//                )
-                TextField("E-mail", text:$email)
-                    .focused($isFocused)
-                    .onChange(of: isFocused) { isFocused in
-                    .textFieldStyle(TextStyle(focused: isFocused))
+                
+                VStack{
+                    TextField("E-mail", text:$email,onEditingChanged: { edit in self.emailClick = edit
+                        if emailClick == true {
+                            passwordclick = false
+                        }
                     }
-                //    .textFieldStyle(TextStyle(focused: $textClick))
-                    .padding(.bottom,10)
-//                    .overlay(
-//                        RoundedRectangle(cornerRadius: 40)
-//                            .stroke(Color.error, lineWidth: 2)
-//                    )
-                SecureField("Password", text: $password)
-                    .textFieldStyle(TextStyle(focused: $textClick))
+                    )
+                        .onChange(of: email, perform: { value in
+                            emailMessage = emailCheck(email: email)
+                        })
+                        .textFieldStyle(TextStyle(focused: $emailClick))
+                    Text("\(emailMessage)")
+                        .onChange(of: emailMessage, perform: { value in
+                            if emailMessage == "ok" {
+                                emailMessageColor = Color.green
+                            } else { emailMessageColor = Color.error }
+                        })
+                        .foregroundColor(emailMessageColor)
+                        .padding(.leading)
+                }
+                .padding(.bottom,10)
+
+                VStack{
+                    SecureField("Password", text: $password, onCommit: { passwordclick = false })
+                        .onTapGesture {
+                            passwordclick = true
+                        }
+                        .onChange(of: password, perform: { value in
+                            print("password final text = \(password)")
+                            passwordMessage = passwordCheck(password: password)
+                        })
+                        .textFieldStyle(TextStyle(focused: $passwordclick))
+                    Text("\(passwordMessage)")
+                        .onChange(of: passwordMessage, perform: { value in
+                            if passwordMessage == "ok" {
+                                passwordMessageColor = Color.green
+                            } else { passwordMessageColor = Color.error }
+                        })
+                        .foregroundColor(passwordMessageColor)
+                        .padding(.leading)
+                }
                     .padding(.bottom,30)
                     
                 HStack(spacing:20){
@@ -104,3 +139,4 @@ struct AppNameText: View {
 func buttonTest(){
     return
 }
+

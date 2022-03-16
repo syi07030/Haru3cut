@@ -6,6 +6,24 @@
 //
 
 import Foundation
+import SwiftUI
+
+public func emailCheck(email:String) -> String{
+//    let pattern = "^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
+    if email == "aa" {
+      return "ok"
+    } else {
+      return "유효하지 않은 이메일입니다"
+}
+}
+    
+public func passwordCheck(password:String) -> String{
+    if password == "aa" {
+        return "ok"
+    } else {
+        return "유효하지 않은 비밀번호입니다"
+    }
+}
 
 /*
  interface validateInputInterface {

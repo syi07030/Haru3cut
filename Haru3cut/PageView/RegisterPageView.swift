@@ -20,6 +20,12 @@ struct RegisterPageView: View {
     @State private var showingAlert = false
     @Binding var gotoLogin: Bool
     @State var textClick = false
+    
+    @State var nicknameClick = false
+    @State var emailClick = false
+    @State var passwordclick = false
+    @State var passwordCheckClick = false
+    @State var phonenumberClick = false
      
      var body: some View {
              VStack {
@@ -38,21 +44,59 @@ struct RegisterPageView: View {
                  
                  Spacer()
                  
-                 TextField("닉네임", text: $nickName, onEditingChanged: { edit in self.textClick = edit })
-                     .textFieldStyle(TextStyle(focused: $textClick))
+                 TextField("닉네임", text: $nickName, onEditingChanged: { edit in self.nicknameClick = edit
+                     passwordclick = false
+                     passwordCheckClick = false
+                 })
+                     .onChange(of: nickName, perform: {value in
+                         print("\(nickName)")
+                     })
+                     .textFieldStyle(TextStyle(focused: $nicknameClick))
                      .padding(.bottom,35)
-                 TextField("E-mail", text: $email, onEditingChanged: { edit in self.textClick = edit })
-                     .textFieldStyle(TextStyle(focused: $textClick))
+                 
+                 TextField("E-mail", text: $email, onEditingChanged: { edit in self.emailClick = edit
+                     passwordclick = false
+                     passwordCheckClick = false
+                 })
+                     .onChange(of: email, perform: {value in
+                         print("\(email)")
+                     })
+                     .textFieldStyle(TextStyle(focused: $emailClick))
                      .padding(.bottom,35)
-                 SecureField("Password", text: $password)
-                     .textFieldStyle(TextStyle(focused: $textClick))
+                 
+                 SecureField("Password", text: $password, onCommit: { passwordclick = false
+                 })
+                     .onTapGesture {
+                         passwordclick = true
+                         passwordCheckClick = false
+                     }
+                     .onChange(of: password, perform: { value in
+                         print("password final text = \(password)")
+                     })
+                     .textFieldStyle(TextStyle(focused: $passwordclick))
                      .padding(.bottom,35)
-                 SecureField("Password check", text: $passwordCheck)
-                     .textFieldStyle(TextStyle(focused: $textClick))
+                 
+                 SecureField("Password check", text: $passwordCheck, onCommit: { passwordCheckClick = false })
+                     .onTapGesture {
+                         passwordCheckClick = true
+                         passwordclick = false
+                     }
+                     .onChange(of: passwordCheck, perform: { value in
+                         print("passwordcheck final text = \(passwordCheck)")
+                     })
+                     .textFieldStyle(TextStyle(focused: $passwordCheckClick))
                      .padding(.bottom,35)
-                 TextField("전화번호", text: $phoneNumber, onEditingChanged: { edit in self.textClick = edit })
-                     .textFieldStyle(TextStyle(focused: $textClick))
-                     .padding(.bottom,90)
+                 
+                 TextField("전화번호", text: $phoneNumber, onEditingChanged: { edit in self.phonenumberClick = edit
+                     passwordclick = false
+                     passwordCheckClick = false
+                 })
+                     .onChange(of: phoneNumber, perform: {value in
+                         print("\(phoneNumber)")
+                     })
+                     .textFieldStyle(TextStyle(focused: $phonenumberClick))
+                     .padding(.bottom,35)
+                 
                  Button("완료",action: {showingAlert = true})
                      .buttonStyle(buttonDarkStyle())
                      .padding(.bottom,30)
