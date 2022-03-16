@@ -132,11 +132,11 @@
 				A7F1FFF927D10CB0005B1D2A /* LoginPageView.swift */,
 				A7F1FFFD27D10CC1005B1D2A /* RegisterPageView.swift */,
 				A7F1000127D10CD8005B1D2A /* AccountSelectPageView.swift */,
+				A7B6E2E827E1E55B000D8B6F /* TabView.swift */,
 				A7F1000527D10D06005B1D2A /* MyPostPageView.swift */,
 				A7F1002827D9ECF9005B1D2A /* FriendPostPageView.swift */,
 				A7F1003C27DB7657005B1D2A /* PartyPageView.swift */,
 				A7B6E2DE27DF8B8E000D8B6F /* test.swift */,
-				A7B6E2E827E1E55B000D8B6F /* TabView.swift */,
 			);
 			path = PageView;
 			sourceTree = "<group>";

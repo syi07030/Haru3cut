@@ -33,8 +33,11 @@ public func passwordDoubleCheck(password:String) -> String{
     }
 }
 
+public var name = ""
+
 public func nicknameCheck(nickName:String) -> String{
     if nickName == "aa" {
+        name = nickName
         return "ok"
     } else {
         return "이미 있는 닉네임입니다"
