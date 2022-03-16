@@ -101,7 +101,7 @@ struct LoginPageView: View {
                     
                    // MARK: - need alert fix
                     if loginMessage == "로그인되었습니다" {
-                        NavigationLink(destination: MyPostPageView(), label:{Text("로그인")})
+                        NavigationLink(destination: MyTabView(), label:{Text("로그인")})
                             .buttonStyle(buttonLightStyle())
                     }else{
                         Button("로그인",action: {showingAlert = true})
