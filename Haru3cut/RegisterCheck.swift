@@ -1,8 +1,8 @@
 //
-//  RegisterLoginCheck.swift
+//  RegisterCheck.swift
 //  Haru3cut
 //
-//  Created by HanGeunyoung on 2022/03/10.
+//  Created by HanGeunyoung on 2022/03/16.
 //
 
 import Foundation
@@ -13,7 +13,7 @@ public func emailCheck(email:String) -> String{
     if email == "aa" {
       return "ok"
     } else {
-      return "유효하지 않은 이메일입니다"
+      return "유효하지 않은 이메일 형식입니다"
 }
 }
     
@@ -21,9 +21,34 @@ public func passwordCheck(password:String) -> String{
     if password == "aa" {
         return "ok"
     } else {
-        return "유효하지 않은 비밀번호입니다"
+        return "유효하지 않은 비밀번호 형식입니다"
     }
 }
+
+public func passwordDoubleCheck(password:String) -> String{
+    if password == "aa" {
+        return "ok"
+    } else {
+        return "비밀번호가 같지 않습니다"
+    }
+}
+
+public func nicknameCheck(nickName:String) -> String{
+    if nickName == "aa" {
+        return "ok"
+    } else {
+        return "이미 있는 닉네임입니다"
+    }
+}
+
+public func phoneNumberCheck(phoneNumber:String) -> String{
+    if phoneNumber == "aa" {
+        return "ok"
+    } else {
+        return "유효하지 않은 전화번호 형식입니다"
+    }
+}
+
 
 /*
  interface validateInputInterface {

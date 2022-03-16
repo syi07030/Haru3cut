@@ -27,6 +27,9 @@ struct LoginPageView: View {
     
     @State var passwordMessage = " "
     @State var passwordMessageColor = Color.error
+    
+    @State private var showingAlert = false
+    @State private var showingLoginPage = false
         
     var body: some View {
         
@@ -45,6 +48,7 @@ struct LoginPageView: View {
                             emailMessage = emailCheck(email: email)
                         })
                         .textFieldStyle(TextStyle(focused: $emailClick))
+                    
                     Text("\(emailMessage)")
                         .onChange(of: emailMessage, perform: { value in
                             if emailMessage == "ok" {
@@ -62,11 +66,10 @@ struct LoginPageView: View {
                             passwordclick = true
                         }
                         .onChange(of: password, perform: { value in
-                            print("password final text = \(password)")
                             passwordMessage = passwordCheck(password: password)
                         })
                         .textFieldStyle(TextStyle(focused: $passwordclick))
-                    Text("\(passwordMessage)")
+/*                    Text("\(passwordMessage)")
                         .onChange(of: passwordMessage, perform: { value in
                             if passwordMessage == "ok" {
                                 passwordMessageColor = Color.green
@@ -74,6 +77,7 @@ struct LoginPageView: View {
                         })
                         .foregroundColor(passwordMessageColor)
                         .padding(.leading)
+ */
                 }
                     .padding(.bottom,30)
                     
@@ -93,15 +97,19 @@ struct LoginPageView: View {
                             .navigationBarTitle("")
                     )
                     
-                    /*
-                    NavigationLink(
-                        "회원가입", destination: RegisterPageView(shouldPopToRootView: self.$isActive), isActive: self.$isActive
-                        )
-                        .buttonStyle(buttonDarkStyle())
-                      //  .isdetail
-                    */
-                    NavigationLink(destination: MyPostPageView(), label:{Text("로그인")})
-                        .buttonStyle(buttonLightStyle())
+                    let loginMessage = loginCheck(email: email, password: password)
+                    
+                   // MARK: - need alert fix
+                    if loginMessage == "로그인되었습니다" {
+                        NavigationLink(destination: MyPostPageView(), label:{Text("로그인")})
+                            .buttonStyle(buttonLightStyle())
+                    }else{
+                        Button("로그인",action: {showingAlert = true})
+                            .buttonStyle(buttonLightStyle())
+                            .alert("\(loginMessage)", isPresented: $showingAlert){}
+                    }
+                    // End_need alert fix
+
                 }
                 .padding(.horizontal, 20)
                 //.fixedSize(horizontal: true, vertical: false)

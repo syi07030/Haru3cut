@@ -26,6 +26,18 @@ struct RegisterPageView: View {
     @State var passwordclick = false
     @State var passwordCheckClick = false
     @State var phonenumberClick = false
+    
+    @State var nicknameErrorMessage = " "
+    @State var emailErrorMessage = " "
+    @State var passwordErrorMessage = " "
+    @State var passwordCheckErrorMessage = " "
+    @State var phoneNumberErrorMessage = " "
+    
+    @State var nickNameMessageColor = Color.error
+    @State var emailMessageColor = Color.error
+    @State var passwordMessageColor = Color.error
+    @State var passwordCheckMessageColor = Color.error
+    @State var phoneNumberMessageColor = Color.error
      
      var body: some View {
              VStack {
@@ -40,62 +52,118 @@ struct RegisterPageView: View {
                      .padding(.top, 50)
                  }
                  .padding(0)
+                 .padding(.bottom,20)
                  .frame(height:100)
                  
                  Spacer()
                  
-                 TextField("닉네임", text: $nickName, onEditingChanged: { edit in self.nicknameClick = edit
-                     passwordclick = false
-                     passwordCheckClick = false
-                 })
-                     .onChange(of: nickName, perform: {value in
-                         print("\(nickName)")
-                     })
-                     .textFieldStyle(TextStyle(focused: $nicknameClick))
-                     .padding(.bottom,35)
-                 
-                 TextField("E-mail", text: $email, onEditingChanged: { edit in self.emailClick = edit
-                     passwordclick = false
-                     passwordCheckClick = false
-                 })
-                     .onChange(of: email, perform: {value in
-                         print("\(email)")
-                     })
-                     .textFieldStyle(TextStyle(focused: $emailClick))
-                     .padding(.bottom,35)
-                 
-                 SecureField("Password", text: $password, onCommit: { passwordclick = false
-                 })
-                     .onTapGesture {
-                         passwordclick = true
-                         passwordCheckClick = false
-                     }
-                     .onChange(of: password, perform: { value in
-                         print("password final text = \(password)")
-                     })
-                     .textFieldStyle(TextStyle(focused: $passwordclick))
-                     .padding(.bottom,35)
-                 
-                 SecureField("Password check", text: $passwordCheck, onCommit: { passwordCheckClick = false })
-                     .onTapGesture {
-                         passwordCheckClick = true
+                 VStack{
+                     TextField("닉네임", text: $nickName, onEditingChanged: { edit in self.nicknameClick = edit
                          passwordclick = false
-                     }
-                     .onChange(of: passwordCheck, perform: { value in
-                         print("passwordcheck final text = \(passwordCheck)")
+                         passwordCheckClick = false
                      })
-                     .textFieldStyle(TextStyle(focused: $passwordCheckClick))
-                     .padding(.bottom,35)
+                         .onChange(of: nickName, perform: {value in
+                             nicknameErrorMessage = nicknameCheck(nickName: nickName)
+                         })
+                         .textFieldStyle(TextStyle(focused: $nicknameClick))
+                     
+                     Text("\(nicknameErrorMessage)")
+                         .onChange(of: nicknameErrorMessage, perform: { value in
+                             if nicknameErrorMessage == "ok" {
+                                 nickNameMessageColor = Color.green
+                             } else { nickNameMessageColor = Color.error }
+                         })
+                         .foregroundColor(nickNameMessageColor)
+                         .padding(.leading)
+                 }
+                     .padding(.bottom,25)
                  
-                 TextField("전화번호", text: $phoneNumber, onEditingChanged: { edit in self.phonenumberClick = edit
-                     passwordclick = false
-                     passwordCheckClick = false
-                 })
-                     .onChange(of: phoneNumber, perform: {value in
-                         print("\(phoneNumber)")
+                 VStack{
+                     TextField("E-mail", text: $email, onEditingChanged: { edit in self.emailClick = edit
+                         passwordclick = false
+                         passwordCheckClick = false
                      })
-                     .textFieldStyle(TextStyle(focused: $phonenumberClick))
-                     .padding(.bottom,35)
+                         .onChange(of: email, perform: {value in
+                             emailErrorMessage = emailCheck(email: email)
+                         })
+                         .textFieldStyle(TextStyle(focused: $emailClick))
+                     
+                     Text("\(emailErrorMessage)")
+                         .onChange(of: emailErrorMessage, perform: { value in
+                             if emailErrorMessage == "ok" {
+                                 emailMessageColor = Color.green
+                             } else { emailMessageColor = Color.error }
+                         })
+                         .foregroundColor(emailMessageColor)
+                         .padding(.leading)
+                 }
+                     .padding(.bottom,25)
+                 
+                 VStack{
+                     SecureField("Password", text: $password, onCommit: { passwordclick = false
+                     })
+                         .onTapGesture {
+                             passwordclick = true
+                             passwordCheckClick = false
+                         }
+                         .onChange(of: password, perform: { value in
+                             passwordErrorMessage = Haru3cut.passwordCheck(password: password)
+                         })
+                         .textFieldStyle(TextStyle(focused: $passwordclick))
+                     
+                     Text("\(passwordErrorMessage)")
+                         .onChange(of: passwordErrorMessage, perform: { value in
+                             if passwordErrorMessage == "ok" {
+                                 passwordMessageColor = Color.green
+                             } else { passwordMessageColor = Color.error }
+                         })
+                         .foregroundColor(passwordMessageColor)
+                         .padding(.leading)
+                         
+                 } .padding(.bottom,25)
+                 
+                 VStack{
+                     SecureField("Password check", text: $passwordCheck, onCommit: { passwordCheckClick = false })
+                         .onTapGesture {
+                             passwordCheckClick = true
+                             passwordclick = false
+                         }
+                         .onChange(of: passwordCheck, perform: { value in
+                             passwordCheckErrorMessage = passwordDoubleCheck(password: passwordCheck)
+                         })
+                         .textFieldStyle(TextStyle(focused: $passwordCheckClick))
+                     
+                     Text("\(passwordCheckErrorMessage)")
+                         .onChange(of: passwordCheckErrorMessage, perform: { value in
+                             if passwordCheckErrorMessage == "ok" {
+                                 passwordCheckMessageColor = Color.green
+                             } else { passwordCheckMessageColor = Color.error }
+                         })
+                         .foregroundColor(passwordCheckMessageColor)
+                         .padding(.leading)
+                 }
+                     .padding(.bottom,25)
+                 
+                 VStack{
+                     TextField("전화번호", text: $phoneNumber, onEditingChanged: { edit in self.phonenumberClick = edit
+                         passwordclick = false
+                         passwordCheckClick = false
+                     })
+                         .onChange(of: phoneNumber, perform: {value in
+                             phoneNumberErrorMessage = phoneNumberCheck(phoneNumber: phoneNumber)
+                         })
+                         .textFieldStyle(TextStyle(focused: $phonenumberClick))
+                     
+                     Text("\(phoneNumberErrorMessage)")
+                         .onChange(of: phoneNumberErrorMessage, perform: { value in
+                             if phoneNumberErrorMessage == "ok" {
+                                 phoneNumberMessageColor = Color.green
+                             } else { phoneNumberMessageColor = Color.error }
+                         })
+                         .foregroundColor(phoneNumberMessageColor)
+                         .padding(.leading)
+                 }
+                     .padding(.bottom,25)
                  
                  Button("완료",action: {showingAlert = true})
                      .buttonStyle(buttonDarkStyle())
@@ -143,3 +211,19 @@ struct topView: View {
     }
 }
 */
+
+struct TextFieldErrorMessage: View{
+    @State var errorMessage: String
+    @State var errorMessageColor = Color.error
+    
+    var body: some View{
+        Text("\(errorMessage)")
+            .onChange(of: errorMessage, perform: { value in
+                if errorMessage == "ok" {
+                    errorMessageColor = Color.green
+                } else { errorMessageColor = Color.error }
+            })
+            .foregroundColor(errorMessageColor)
+            .padding(.leading)
+    }
+}

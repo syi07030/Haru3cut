@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct MyPostPageView: View {
+    
+ //   @Binding var gotoLogin: Bool
  
     var body: some View {
         NavigationView{
@@ -39,7 +41,7 @@ struct MyPostPageView: View {
                 Text("My Post")
                 
                 Spacer()
-                
+
                 VStack(alignment:.center) {
                     HStack{
                         NavigationLink(destination: MyPostPageView(),
