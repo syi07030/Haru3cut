@@ -10,7 +10,12 @@ import SwiftUI
 struct FriendPostPageView: View {
  
     var body: some View {
-        Text("my friends")
+        VStack{
+            Spacer()
+            Text("My friends")
+            Spacer()
+            Divider()
+        }
         }
    }
 

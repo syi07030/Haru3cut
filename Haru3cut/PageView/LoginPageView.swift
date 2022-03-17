@@ -41,6 +41,7 @@ struct LoginPageView: View {
                     if emailClick{
                         HStack{
                             Text("E-mail")
+                                .foregroundColor(Color.gray)
                             Spacer()
                         }
                     }
@@ -54,19 +55,29 @@ struct LoginPageView: View {
                             emailMessage = emailCheck(email: email)
                         })
                         .textFieldStyle(TextStyle(focused: $emailClick))
-                    
-                    Text("\(emailMessage)")
-                        .onChange(of: emailMessage, perform: { value in
-                            if emailMessage == "ok" {
-                                emailMessageColor = Color.green
-                            } else { emailMessageColor = Color.error }
-                        })
-                        .foregroundColor(emailMessageColor)
-                        .padding(.leading)
+                   
+                    HStack{
+                        Text("\(emailMessage)")
+                            .onChange(of: emailMessage, perform: { value in
+                                if emailMessage == "ok" {
+                                    emailMessageColor = Color.white
+                                } else { emailMessageColor = Color.error }
+                            })
+                            .foregroundColor(emailMessageColor)
+                        Spacer()
+                    }
                 }
                 .padding(.bottom,10)
 
                 VStack{
+                    
+                    if passwordclick{
+                        HStack{
+                            Text("Password")
+                                .foregroundColor(Color.gray)
+                            Spacer()
+                        }
+                    }
                     SecureField("Password", text: $password, onCommit: { passwordclick = false })
                         .onTapGesture {
                             passwordclick = true
@@ -116,7 +127,6 @@ struct LoginPageView: View {
                         NavigationLink(destination: MyTabView(), label:{Text("로그인")})
                             .navigationBarTitle("")
                             .navigationBarHidden(true)
-                            .navigationBarBackButtonHidden(true)
                             .buttonStyle(buttonLightStyle())
                             
                     }else{
@@ -131,26 +141,17 @@ struct LoginPageView: View {
                 //.fixedSize(horizontal: true, vertical: false)
                 
             } .padding()
+                .navigationBarTitle("", displayMode: .automatic)
+                .navigationBarHidden(true)
                 .padding(.bottom,100)
                 .ignoresSafeArea()
             
         }
         .accentColor(Color.black)
-        .navigationBarTitle("", displayMode: .automatic)
-        .navigationBarHidden(true)
-        .navigationBarBackButtonHidden(true)
         
     }
             
 }
-
-#if DEBUG
-struct LoginPageView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginPageView()
-    }
-}
-#endif
 
 struct AppNameText: View {
     var body: some View{
@@ -163,6 +164,10 @@ struct AppNameText: View {
     }
 }
 
-func buttonTest(){
-    return
+#if DEBUG
+struct LoginPageView_Previews: PreviewProvider {
+    static var previews: some View {
+        LoginPageView()
+    }
 }
+#endif

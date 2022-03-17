@@ -12,7 +12,12 @@ struct MyPostPageView: View {
  //   @Binding var gotoLogin: Bool
  
     var body: some View {
-       Text("my post")
+        VStack{
+            Spacer()
+            Text("My post")
+            Spacer()
+            Divider()
+        }
    }
 }
 /*

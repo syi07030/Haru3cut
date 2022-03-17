@@ -58,6 +58,13 @@ struct RegisterPageView: View {
                  Spacer()
                  
                  VStack{
+                     if nicknameClick{
+                         HStack{
+                             Text("닉네임")
+                                 .foregroundColor(Color.gray)
+                             Spacer()
+                         }
+                     }
                      TextField("닉네임", text: $nickName, onEditingChanged: { edit in self.nicknameClick = edit
                          passwordclick = false
                          passwordCheckClick = false
@@ -67,18 +74,28 @@ struct RegisterPageView: View {
                          })
                          .textFieldStyle(TextStyle(focused: $nicknameClick))
                      
-                     Text("\(nicknameErrorMessage)")
-                         .onChange(of: nicknameErrorMessage, perform: { value in
-                             if nicknameErrorMessage == "ok" {
-                                 nickNameMessageColor = Color.green
-                             } else { nickNameMessageColor = Color.error }
-                         })
-                         .foregroundColor(nickNameMessageColor)
-                         .padding(.leading)
+                     HStack{
+                         Text("\(nicknameErrorMessage)")
+                             .onChange(of: nicknameErrorMessage, perform: { value in
+                                 if nicknameErrorMessage == "ok" {
+                                     nickNameMessageColor = Color.green
+                                 } else { nickNameMessageColor = Color.error }
+                             })
+                             .foregroundColor(nickNameMessageColor)
+                         Spacer()
+                     }
+                     
                  }
                      .padding(.bottom,25)
                  
                  VStack{
+                     if emailClick{
+                         HStack{
+                             Text("E-mail")
+                                 .foregroundColor(Color.gray)
+                             Spacer()
+                         }
+                     }
                      TextField("E-mail", text: $email, onEditingChanged: { edit in self.emailClick = edit
                          passwordclick = false
                          passwordCheckClick = false
@@ -88,18 +105,27 @@ struct RegisterPageView: View {
                          })
                          .textFieldStyle(TextStyle(focused: $emailClick))
                      
-                     Text("\(emailErrorMessage)")
-                         .onChange(of: emailErrorMessage, perform: { value in
-                             if emailErrorMessage == "ok" {
-                                 emailMessageColor = Color.green
-                             } else { emailMessageColor = Color.error }
-                         })
-                         .foregroundColor(emailMessageColor)
-                         .padding(.leading)
+                     HStack{
+                         Text("\(emailErrorMessage)")
+                             .onChange(of: emailErrorMessage, perform: { value in
+                                 if emailErrorMessage == "ok" {
+                                     emailMessageColor = Color.green
+                                 } else { emailMessageColor = Color.error }
+                             })
+                             .foregroundColor(emailMessageColor)
+                         Spacer()
+                     }
                  }
                      .padding(.bottom,25)
                  
                  VStack{
+                     if passwordclick{
+                         HStack{
+                             Text("Password")
+                                 .foregroundColor(Color.gray)
+                             Spacer()
+                         }
+                     }
                      SecureField("Password", text: $password, onCommit: { passwordclick = false
                      })
                          .onTapGesture {
@@ -111,18 +137,27 @@ struct RegisterPageView: View {
                          })
                          .textFieldStyle(TextStyle(focused: $passwordclick))
                      
-                     Text("\(passwordErrorMessage)")
-                         .onChange(of: passwordErrorMessage, perform: { value in
-                             if passwordErrorMessage == "ok" {
-                                 passwordMessageColor = Color.green
-                             } else { passwordMessageColor = Color.error }
-                         })
-                         .foregroundColor(passwordMessageColor)
-                         .padding(.leading)
+                     HStack{
+                         Text("\(passwordErrorMessage)")
+                             .onChange(of: passwordErrorMessage, perform: { value in
+                                 if passwordErrorMessage == "ok" {
+                                     passwordMessageColor = Color.green
+                                 } else { passwordMessageColor = Color.error }
+                             })
+                             .foregroundColor(passwordMessageColor)
+                         Spacer()
+                     }
                          
                  } .padding(.bottom,25)
                  
                  VStack{
+                     if passwordCheckClick{
+                         HStack{
+                             Text("Password check")
+                                 .foregroundColor(Color.gray)
+                             Spacer()
+                         }
+                     }
                      SecureField("Password check", text: $passwordCheck, onCommit: { passwordCheckClick = false })
                          .onTapGesture {
                              passwordCheckClick = true
@@ -133,18 +168,27 @@ struct RegisterPageView: View {
                          })
                          .textFieldStyle(TextStyle(focused: $passwordCheckClick))
                      
-                     Text("\(passwordCheckErrorMessage)")
-                         .onChange(of: passwordCheckErrorMessage, perform: { value in
-                             if passwordCheckErrorMessage == "ok" {
-                                 passwordCheckMessageColor = Color.green
-                             } else { passwordCheckMessageColor = Color.error }
-                         })
-                         .foregroundColor(passwordCheckMessageColor)
-                         .padding(.leading)
+                     HStack{
+                         Text("\(passwordCheckErrorMessage)")
+                             .onChange(of: passwordCheckErrorMessage, perform: { value in
+                                 if passwordCheckErrorMessage == "ok" {
+                                     passwordCheckMessageColor = Color.green
+                                 } else { passwordCheckMessageColor = Color.error }
+                             })
+                             .foregroundColor(passwordCheckMessageColor)
+                         Spacer()
+                     }
                  }
                      .padding(.bottom,25)
                  
                  VStack{
+                     if phonenumberClick{
+                         HStack{
+                             Text("전화번호")
+                                 .foregroundColor(Color.gray)
+                             Spacer()
+                         }
+                     }
                      TextField("전화번호", text: $phoneNumber, onEditingChanged: { edit in self.phonenumberClick = edit
                          passwordclick = false
                          passwordCheckClick = false
@@ -154,20 +198,23 @@ struct RegisterPageView: View {
                          })
                          .textFieldStyle(TextStyle(focused: $phonenumberClick))
                      
-                     Text("\(phoneNumberErrorMessage)")
-                         .onChange(of: phoneNumberErrorMessage, perform: { value in
-                             if phoneNumberErrorMessage == "ok" {
-                                 phoneNumberMessageColor = Color.green
-                             } else { phoneNumberMessageColor = Color.error }
-                         })
-                         .foregroundColor(phoneNumberMessageColor)
-                         .padding(.leading)
+                     HStack{
+                         Text("\(phoneNumberErrorMessage)")
+                             .onChange(of: phoneNumberErrorMessage, perform: { value in
+                                 if phoneNumberErrorMessage == "ok" {
+                                     phoneNumberMessageColor = Color.green
+                                 } else { phoneNumberMessageColor = Color.error }
+                             })
+                             .foregroundColor(phoneNumberMessageColor)
+                         Spacer()
+                     }
                  }
-                     .padding(.bottom,25)
+                 
+                 Spacer()
                  
                  Button("완료",action: {showingAlert = true})
                      .buttonStyle(buttonDarkStyle())
-                     .padding(.bottom,30)
+                     .padding(.bottom,20)
                  .alert("회원가입 완료", isPresented: $showingAlert){
                      Button("OK", action: { self.gotoLogin = false })
                  } message: {

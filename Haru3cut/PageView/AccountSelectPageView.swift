@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/*
 struct AccountSelectPageView: View {
     
     @State var email: String = ""
@@ -56,3 +57,4 @@ struct AccountSelectPageView_Previews: PreviewProvider {
     }
 }
 #endif
+*/

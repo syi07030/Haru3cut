@@ -10,7 +10,12 @@ import SwiftUI
 struct PartyPageView: View {
  
     var body: some View {
-        Text("party")
+        VStack{
+            Spacer()
+            Text("My party")
+            Spacer()
+            Divider()
+        }
         }
    }
 

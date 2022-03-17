@@ -71,3 +71,6 @@ struct Layout_Previews: PreviewProvider {
             Layout()
     }
 }
+
+
+//secureField focus
