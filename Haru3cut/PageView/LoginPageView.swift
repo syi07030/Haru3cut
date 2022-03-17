@@ -26,7 +26,7 @@ struct LoginPageView: View {
     @State var emailMessageColor = Color.error
     
     @State var passwordMessage = " "
-    @State var passwordMessageColor = Color.error
+//    @State var passwordMessageColor = Color.error
     
     @State private var showingAlert = false
     @State private var showingLoginPage = false
@@ -38,6 +38,12 @@ struct LoginPageView: View {
                 AppNameText()
                 
                 VStack{
+                    if emailClick{
+                        HStack{
+                            Text("E-mail")
+                            Spacer()
+                        }
+                    }
                     TextField("E-mail", text:$email,onEditingChanged: { edit in self.emailClick = edit
                         if emailClick == true {
                             passwordclick = false
@@ -65,6 +71,12 @@ struct LoginPageView: View {
                         .onTapGesture {
                             passwordclick = true
                         }
+/*                    SecureField("Password", text: Binding<String>(
+                        get: {self.password},
+                        set: {self.password = $0
+                            self.passwordclick = true
+                        }
+                    ))*/
                         .onChange(of: password, perform: { value in
                             passwordMessage = passwordCheck(password: password)
                         })
@@ -102,7 +114,11 @@ struct LoginPageView: View {
                    // MARK: - need alert fix
                     if loginMessage == "로그인되었습니다" {
                         NavigationLink(destination: MyTabView(), label:{Text("로그인")})
+                            .navigationBarTitle("")
+                            .navigationBarHidden(true)
+                            .navigationBarBackButtonHidden(true)
                             .buttonStyle(buttonLightStyle())
+                            
                     }else{
                         Button("로그인",action: {showingAlert = true})
                             .buttonStyle(buttonLightStyle())
@@ -120,6 +136,9 @@ struct LoginPageView: View {
             
         }
         .accentColor(Color.black)
+        .navigationBarTitle("", displayMode: .automatic)
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
         
     }
             
@@ -147,4 +166,3 @@ struct AppNameText: View {
 func buttonTest(){
     return
 }
-

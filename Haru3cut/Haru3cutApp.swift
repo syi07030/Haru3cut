@@ -13,7 +13,7 @@ struct Haru3cutApp: App {
 
     var body: some Scene {
         WindowGroup {
-            MyTabView()
+            LoginPageView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

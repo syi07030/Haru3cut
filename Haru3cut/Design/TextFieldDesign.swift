@@ -8,7 +8,6 @@
 import Foundation
 import SwiftUI
 
-
 struct TextStyle: TextFieldStyle{
     @Binding var focused: Bool
     func _body(configuration: TextField<Self._Label>) -> some View {
@@ -23,20 +22,3 @@ struct TextStyle: TextFieldStyle{
             
         }
 }
-
-
-/*
-struct TextStyle: TextFieldStyle{
-    func _body(configuration: TextField<Self._Label>) -> some View {
-        configuration
-            .padding(10)
-            //.background(Color.ww)
-            .cornerRadius(8)
-            .background(
-                Rectangle()
-                    .stroke(Color.ww, lineWidth: 2)
-            )
-            
-        }
-}
-*/

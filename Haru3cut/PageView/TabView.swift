@@ -10,7 +10,7 @@ import UIKit
 
 struct MyTabView: View {
     var body: some View{
-        
+        VStack{
         VStack(alignment:.center) {
             HStack(spacing:20){
                     Image("profile")
@@ -52,7 +52,7 @@ struct MyTabView: View {
                         
                     }
         .frame(height:80)
-        Divider().frame(height:3).background(Color.black)
+        Divider().frame(height:2).background(Color.black)
         
         Spacer()
         
@@ -73,6 +73,11 @@ struct MyTabView: View {
                     Text("모임")
                 }
         }
+        .navigationBarTitle("", displayMode: .automatic)
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
+        .ignoresSafeArea()
+        
         .onAppear(){
             UITabBar.appearance().backgroundColor = .black
             UITabBar.appearance().barTintColor = .red
@@ -81,5 +86,6 @@ struct MyTabView: View {
         .accentColor(Color.pp)
         .edgesIgnoringSafeArea(.bottom)
         }
+    }
     
 }
