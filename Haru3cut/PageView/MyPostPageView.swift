@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct MyPostPageView: View {
-    
- //   @Binding var gotoLogin: Bool
- 
+     
     var body: some View {
         VStack{
             Spacer()
@@ -20,12 +18,11 @@ struct MyPostPageView: View {
         }
    }
 }
-/*
+
 #if DEBUG
 struct MyPostPageView_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterPageView()
+        MyPostPageView()
     }
 }
 #endif
-*/

@@ -13,7 +13,6 @@ struct TextStyle: TextFieldStyle{
     func _body(configuration: TextField<Self._Label>) -> some View {
         configuration
             .padding(10)
-            //.background(Color.ww)
             .cornerRadius(8)
             .background(
                 Rectangle()

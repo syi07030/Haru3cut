@@ -7,9 +7,14 @@
 
 import SwiftUI
 
+//public var passwordClick = false
+//public var passwordCheckClick = false
+
 struct RegisterPageView: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
+    // MARK: - Variables
     
     @State var email: String = ""
     @State var nickName: String = ""
@@ -19,13 +24,12 @@ struct RegisterPageView: View {
         
     @State private var showingAlert = false
     @Binding var gotoLogin: Bool
-    @State var textClick = false
     
     @State var nicknameClick = false
     @State var emailClick = false
-    @State var passwordclick = false
-    @State var passwordCheckClick = false
     @State var phonenumberClick = false
+    @State var passwordClick = false
+    @State var passwordCheckClick = false
     
     @State var nicknameErrorMessage = " "
     @State var emailErrorMessage = " "
@@ -66,7 +70,7 @@ struct RegisterPageView: View {
                          }
                      }
                      TextField("닉네임", text: $nickName, onEditingChanged: { edit in self.nicknameClick = edit
-                         passwordclick = false
+                         passwordClick = false
                          passwordCheckClick = false
                      })
                          .onChange(of: nickName, perform: {value in
@@ -97,7 +101,7 @@ struct RegisterPageView: View {
                          }
                      }
                      TextField("E-mail", text: $email, onEditingChanged: { edit in self.emailClick = edit
-                         passwordclick = false
+                         passwordClick = false
                          passwordCheckClick = false
                      })
                          .onChange(of: email, perform: {value in
@@ -119,23 +123,23 @@ struct RegisterPageView: View {
                      .padding(.bottom,25)
                  
                  VStack{
-                     if passwordclick{
+                     if passwordClick{
                          HStack{
                              Text("Password")
                                  .foregroundColor(Color.gray)
                              Spacer()
                          }
                      }
-                     SecureField("Password", text: $password, onCommit: { passwordclick = false
+                     SecureField("Password", text: $password, onCommit: { passwordClick = false
                      })
                          .onTapGesture {
-                             passwordclick = true
+                             passwordClick = true
                              passwordCheckClick = false
                          }
                          .onChange(of: password, perform: { value in
                              passwordErrorMessage = Haru3cut.passwordCheck(password: password)
                          })
-                         .textFieldStyle(TextStyle(focused: $passwordclick))
+                         .textFieldStyle(TextStyle(focused: $passwordClick))
                      
                      HStack{
                          Text("\(passwordErrorMessage)")
@@ -161,7 +165,7 @@ struct RegisterPageView: View {
                      SecureField("Password check", text: $passwordCheck, onCommit: { passwordCheckClick = false })
                          .onTapGesture {
                              passwordCheckClick = true
-                             passwordclick = false
+                             passwordClick = false
                          }
                          .onChange(of: passwordCheck, perform: { value in
                              passwordCheckErrorMessage = passwordDoubleCheck(password: passwordCheck)
@@ -190,7 +194,7 @@ struct RegisterPageView: View {
                          }
                      }
                      TextField("전화번호", text: $phoneNumber, onEditingChanged: { edit in self.phonenumberClick = edit
-                         passwordclick = false
+                         passwordClick = false
                          passwordCheckClick = false
                      })
                          .onChange(of: phoneNumber, perform: {value in
@@ -225,7 +229,54 @@ struct RegisterPageView: View {
                 .ignoresSafeArea()
     }
 }
-
+/*
+struct Register_TextField: View{
+    @State var click: Bool
+    @State var textName: String
+    @State var errorMessage: String
+    @State var errorMessageColor: Color
+    
+    var body: some View{
+        VStack{
+            if click{
+                HStack{
+                    Text("\(textName)")
+                        .foregroundColor(Color.gray)
+                    Spacer()
+                }
+            }
+            TextField("\(textName)", text: $textName, onEditingChanged: { edit in self.click = edit
+                passwordClick = false
+                passwordCheckClick = false
+            })
+                .onChange(of: textName, perform: {value in
+                    if textName == "nickName"{
+                        errorMessage = nicknameCheck(nickName: textName)
+                    }else if textName == "email"{
+                        errorMessage = emailCheck(email: textName)
+                    }else if textName == "phoneNumber"{
+                        errorMessage = phoneNumberCheck(phoneNumber: textName)
+                    }
+                })
+                .textFieldStyle(TextStyle(focused: $click))
+            
+            HStack{
+                Text("\(errorMessage)")
+                    .onChange(of: errorMessage, perform: { value in
+                        if errorMessage == "ok" {
+                            errorMessageColor = Color.green
+                        } else { errorMessageColor = Color.error }
+                    })
+                    .foregroundColor(errorMessageColor)
+                Spacer()
+            }
+            
+        }
+            .padding(.bottom,25)
+    }
+}
+*/
+ 
 /*
 #if DEBUG
 struct RegisterPageView_Previews: PreviewProvider {
@@ -235,42 +286,3 @@ struct RegisterPageView_Previews: PreviewProvider {
 }
 #endif
 */
-/*
-struct topView: View {
-    var body: some View {
-        VStack(alignment:.center) {
-            ZStack{
-                HStack{
-                    Image("back")
-                        .resizable()
-                        .offset(y:3)
-                        .frame(width: 30, height: 30, alignment: .center)
-                    Spacer()
-                }
-                Text("회원가입")
-                    .font(.largeTitle)
-                    .fontWeight(.semibold)
-            } .padding(.top, 50)
-        }
-        .padding(0)
-        .frame(height:100)
-
-    }
-}
-*/
-
-struct TextFieldErrorMessage: View{
-    @State var errorMessage: String
-    @State var errorMessageColor = Color.error
-    
-    var body: some View{
-        Text("\(errorMessage)")
-            .onChange(of: errorMessage, perform: { value in
-                if errorMessage == "ok" {
-                    errorMessageColor = Color.green
-                } else { errorMessageColor = Color.error }
-            })
-            .foregroundColor(errorMessageColor)
-            .padding(.leading)
-    }
-}

@@ -24,75 +24,28 @@ struct MyTabView: View {
              TabView{
                  MyPostPageView()
                      .tabItem {
-                         Image(systemName: "person.crop.rectangle.stack")
+                         Image("myDiary").renderingMode(.template)
                          Text("일기")
                      }
                  
                  FriendPostPageView()
                      .tabItem {
-                         Image(systemName: "person.3.fill")
+                         Image("friend").renderingMode(.template)
                          Text("친구")
                      }
                  
                  PartyPageView()
                      .tabItem {
-                         Image(systemName: "camera.filters")
+                         Image("category").renderingMode(.template)
                          Text("모임")
                      }
              }
-   //          .padding(.top,30)
              .accentColor(Color.pp)
              
              }
              .ignoresSafeArea(.all)
                 .navigationBarBackButtonHidden(true)
      }
-
-/*    var body: some View{
-        VStack{
-            VStack(alignment:.center) {
-
-                topView()
-
-            }
-            .frame(height:80)
-            
-            Divider().frame(height:2).background(Color.black)
-            
-            Spacer()
-            
-            TabView {
-                MyPostPageView()
-                    .tabItem {
-                        Image(systemName: "person.crop.rectangle.stack")
-                        Text("일기")
-                    }
-                FriendPostPageView()
-                    .tabItem {
-                        Image(systemName: "person.3.fill")
-                        Text("친구")
-                    }
-                PartyPageView()
-                    .tabItem {
-                        Image(systemName: "camera.filters")
-                        Text("모임")
-                    }
-            }
-            
-            .onAppear(){
-                UITabBar.appearance().backgroundColor = .black
-                UITabBar.appearance().barTintColor = .red
-                    }
-            
-            .accentColor(Color.pp)
-            .edgesIgnoringSafeArea(.bottom)
-        }
-        .navigationBarTitle("", displayMode: .automatic)
-        .navigationBarHidden(true)
-        .navigationBarBackButtonHidden(true)
-        .ignoresSafeArea()
- 
-    }*/
 }
 
 struct topView: View{

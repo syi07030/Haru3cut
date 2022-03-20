@@ -8,10 +8,6 @@
 import Foundation
 import SwiftUI
 
-public var name = "aa" //nickName
-public var emailAddress = ""
-public var pw = ""
-
 public func emailCheck(email: String) -> String{
     let pattern = "^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,20}$"
     let regex = try? NSRegularExpression(pattern: pattern)
@@ -55,7 +51,6 @@ public func nicknameCheck(nickName: String) -> String{
     } else if nickName.count > 12 {
         return "너무 긴 이름입니다"
     } else {
-        name = nickName
         return "ok"
     }
 }
