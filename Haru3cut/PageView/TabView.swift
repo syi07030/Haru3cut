@@ -102,7 +102,7 @@ struct topView: View{
                 .padding()
             
             Button(action:{showSearch.toggle()}){
-                Image(systemName: "magnifyingglass")
+                Image(systemName: "magnifyingglass").renderingMode(.original)
                 .resizable()
                 .frame(width:25, height:25)
             }
@@ -134,18 +134,15 @@ struct SearchBar: View {
  
     var body: some View {
         VStack{
-        ZStack {
+        HStack {
  
+            Image(systemName: "magnifyingglass")
+            
             TextField("Search ...", text: $text)
-                .padding(7)
-                .padding(.horizontal, 25)
-                .background(Color(.systemGray6))
-                .cornerRadius(8)
-                .padding(.horizontal, 10)
                 .onTapGesture {
                     self.isEditing = true
                 }
-                .padding(.top,130)
+                .foregroundColor(.primary)
  
             if isEditing {
                 Button(action: {
@@ -154,10 +151,15 @@ struct SearchBar: View {
                 }) {
                     Image(systemName: "x.circle")
                 }
-                //.padding(.trailing, 10)
-                //.transition(.move(edge: .trailing))
             }
         }
+        .padding(7)
+        .foregroundColor(.secondary)
+        .background(Color(UIColor.systemGray6))
+        .cornerRadius(8)
+        .padding(.horizontal, 25)
+        .padding(.horizontal, 10)
+        .padding(.top,130)
             Spacer()
         }
     }
