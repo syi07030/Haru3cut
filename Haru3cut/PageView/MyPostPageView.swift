@@ -10,13 +10,33 @@ import SwiftUI
 struct MyPostPageView: View {
      
     var body: some View {
-        VStack{
-            Spacer()
-            Text("My post")
-            Spacer()
-            Divider()
+        ZStack(alignment: .bottomTrailing){
+            VStack{
+                Spacer()
+                Text("My post")
+                Spacer()
+                Divider()
+            }
+            
+            writingButton().padding()
+            
         }
    }
+}
+
+struct writingButton: View{
+    var body: some View{
+        Button(action: {
+
+        }) {
+            Image(systemName: "pencil")
+                .padding()
+                .background(Color.pp)
+                .clipShape(Circle())
+                .font(.largeTitle)
+                .foregroundColor(.white)
+        }
+    }
 }
 
 #if DEBUG
