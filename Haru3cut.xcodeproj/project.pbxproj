@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A79DE7C227EB123A002948F1 /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79DE7C127EB123A002948F1 /* MyPageView.swift */; };
+		A79DE7C627EB4F62002948F1 /* WritingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79DE7C527EB4F62002948F1 /* WritingPageView.swift */; };
 		A7B6E2E527E1CBDC000D8B6F /* LoginCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B6E2E427E1CBDC000D8B6F /* LoginCheck.swift */; };
 		A7B6E2E727E1DC4F000D8B6F /* RegisterCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B6E2E627E1DC4F000D8B6F /* RegisterCheck.swift */; };
 		A7B6E2E927E1E55B000D8B6F /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B6E2E827E1E55B000D8B6F /* TabView.swift */; };
@@ -70,6 +72,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A79DE7C127EB123A002948F1 /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
+		A79DE7C527EB4F62002948F1 /* WritingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingPageView.swift; sourceTree = "<group>"; };
 		A7B6E2E427E1CBDC000D8B6F /* LoginCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCheck.swift; sourceTree = "<group>"; };
 		A7B6E2E627E1DC4F000D8B6F /* RegisterCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCheck.swift; sourceTree = "<group>"; };
 		A7B6E2E827E1E55B000D8B6F /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
@@ -133,6 +137,8 @@
 				A7F1000527D10D06005B1D2A /* MyPostPageView.swift */,
 				A7F1002827D9ECF9005B1D2A /* FriendPostPageView.swift */,
 				A7F1003C27DB7657005B1D2A /* PartyPageView.swift */,
+				A79DE7C127EB123A002948F1 /* MyPageView.swift */,
+				A79DE7C527EB4F62002948F1 /* WritingPageView.swift */,
 			);
 			path = PageView;
 			sourceTree = "<group>";
@@ -367,9 +373,11 @@
 			files = (
 				A7F1002927D9ECF9005B1D2A /* FriendPostPageView.swift in Sources */,
 				A7F1FFCE27CF5E66005B1D2A /* Haru3cut.xcdatamodeld in Sources */,
+				A79DE7C627EB4F62002948F1 /* WritingPageView.swift in Sources */,
 				A7F1001D27D5A0A5005B1D2A /* TextFieldDesign.swift in Sources */,
 				A7F1FFCB27CF5E66005B1D2A /* Persistence.swift in Sources */,
 				A7F1FFFE27D10CC1005B1D2A /* RegisterPageView.swift in Sources */,
+				A79DE7C227EB123A002948F1 /* MyPageView.swift in Sources */,
 				A7F1000627D10D06005B1D2A /* MyPostPageView.swift in Sources */,
 				A7B6E2E527E1CBDC000D8B6F /* LoginCheck.swift in Sources */,
 				A7F1003D27DB7658005B1D2A /* PartyPageView.swift in Sources */,

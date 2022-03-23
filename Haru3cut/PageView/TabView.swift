@@ -19,36 +19,20 @@ struct MyTabView: View {
          ZStack{
          VStack {
              HStack(spacing:20){
-                     Image("profile")
-                     .frame(width: 70, height: 70, alignment: .center)
-                     .cornerRadius(50)
-                     .overlay(RoundedRectangle(cornerRadius: 50)
-                                 .stroke(Color.black, lineWidth: 2))
-                     Text("\(name)")
-                     .font(.title)
-                     Spacer()
-                     Image(systemName: "pencil")
+/*                     Image(systemName: "pencil")
                      .resizable()
                      .frame(width:25, height:25)
-                     .padding()
+                     .padding()*/
                  
-                 Button(action:{showSearch.toggle()}){
-                     Image(systemName: "magnifyingglass")
-                     .resizable()
-                     .frame(width:25, height:25)
-                 }
-                     
-                     Image("dots")
-                     .resizable()
-                     .frame(width:40, height:40)
+                 SearchBar(text: $searchText)
                          
              }
                  .padding()
-                 .padding(.top, 70)
-                 .frame(height:100)
+                 .padding(.top, 50)
+                 .frame(height:80)
                  
-            Divider()
-                 .padding(.top,30)
+            /*Divider()
+                 .padding(.top,30)*/
                               
              TabView{
                  MyPostPageView()
@@ -68,6 +52,12 @@ struct MyTabView: View {
                          Image("category").renderingMode(.template)
                          Text("모임")
                      }
+                 
+                 MyPageView()
+                     .tabItem{
+                         Image(systemName: "person.fill")
+                         Text("마이페이지")
+                     }
              }
              .accentColor(Color.pp)
              
@@ -80,51 +70,6 @@ struct MyTabView: View {
          }.ignoresSafeArea(.all)
              .navigationBarBackButtonHidden(true)
      }
-}
-
-struct topView: View{
-    @State private var showSearch = false
-    @State private var isEditing = false
-    @State var searchText = ""
-    var body: some View{
-        HStack(spacing:20){
-                Image("profile")
-                .frame(width: 70, height: 70, alignment: .center)
-                .cornerRadius(50)
-                .overlay(RoundedRectangle(cornerRadius: 50)
-                            .stroke(Color.black, lineWidth: 2))
-                Text("\(name)")
-                .font(.title)
-                Spacer()
-                Image(systemName: "pencil")
-                .resizable()
-                .frame(width:25, height:25)
-                .padding()
-            
-            Button(action:{showSearch.toggle()}){
-                Image(systemName: "magnifyingglass").renderingMode(.original)
-                .resizable()
-                .frame(width:25, height:25)
-            }
-                
-                Image("dots")
-                .resizable()
-                .frame(width:40, height:40)
-                /*
-                    NavigationLink(destination: LoginPageView(), label:{Image(systemName: "person.circle")})
-                       .offset(y:3)
-                       .border(Color.black)
-                       .frame(width: 50, height: 50, alignment: .leading)
-                 */
-                    
-        }
-        
-        ZStack{
-            if showSearch{
-                SearchBar(text: $searchText)
-            }
-        }
-    }
 }
 
 struct SearchBar: View {
@@ -157,10 +102,6 @@ struct SearchBar: View {
         .foregroundColor(.secondary)
         .background(Color(UIColor.systemGray6))
         .cornerRadius(8)
-        .padding(.horizontal, 25)
-        .padding(.horizontal, 10)
-        .padding(.top,130)
-            Spacer()
         }
     }
 }
