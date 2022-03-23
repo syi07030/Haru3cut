@@ -68,6 +68,12 @@ struct MyTabView: View {
                          Image("category").renderingMode(.template)
                          Text("모임")
                      }
+                 
+                 MyPageView()
+                     .tabItem{
+                         Image(systemName: "person.fill")
+                         Text("마이페이지")
+                     }
              }
              .accentColor(Color.pp)
              
