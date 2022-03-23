@@ -8,27 +8,29 @@
 import SwiftUI
 
 struct MyPostPageView: View {
-     
+    @State var searchText = ""
     var body: some View {
-        ZStack(alignment: .bottomTrailing){
-            VStack{
+        ZStack(alignment: .bottomTrailing) {
+            VStack {
+                HStack(spacing: 10) {
+                    SearchBar(text: $searchText)
+                }
+                    .padding()
+                    .frame(height: 40)
                 Spacer()
                 Text("My post")
                 Spacer()
                 Divider()
             }
             
-            writingButton().padding()
-            
+            WritingButton().padding()
         }
    }
 }
 
-struct writingButton: View{
-    var body: some View{
-        Button(action: {
-
-        }) {
+struct WritingButton: View {
+    var body: some View {
+        Button(action: {}){
             Image(systemName: "pencil")
                 .padding()
                 .background(Color.pp)

@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct PartyPageView: View {
+    @State var searchText = ""
  
     var body: some View {
         VStack{
+            HStack(spacing:10){
+                SearchBar(text: $searchText)
+            }
+                .padding()
+                .frame(height:40)
             Spacer()
             Text("My party")
             Spacer()

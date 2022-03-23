@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct FriendPostPageView: View {
- 
+    @State var searchText = "" 
     var body: some View {
-        VStack{
+        VStack {
+            HStack(spacing: 10) {
+                SearchBar(text: $searchText)
+            }
+                .padding()
+                .frame(height: 40)
             Spacer()
             Text("My friends")
             Spacer()
