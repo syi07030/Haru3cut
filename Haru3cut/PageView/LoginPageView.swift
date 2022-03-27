@@ -106,10 +106,19 @@ struct LoginPageView: View {
                             .navigationBarTitle("")
                     )
                     
-                    let loginMessage = loginCheck(email: email, password: password)
+                   // let loginMessage = loginCheck(email: email, password: password)
                     
+                    Button("로그인", action: {
+                        if loginCheck(email: email, password: password) == "ok"{
+                            NavigationLink(destination: MyTabView(), label:{})
+                                .navigationBarTitle("")
+                                .navigationBarHidden(true)
+                        }else{
+                            showingAlert = true
+                        }
+                    }) .buttonStyle(buttonLightStyle())
                    // MARK: - need to fix alert
-                    if loginMessage == "로그인되었습니다" {
+/*                    if loginMessage == "로그인되었습니다" {
                         NavigationLink(destination: MyTabView(), label:{Text("로그인")})
                             .navigationBarTitle("")
                             .navigationBarHidden(true)
@@ -119,7 +128,7 @@ struct LoginPageView: View {
                         Button("로그인",action: {showingAlert = true})
                             .buttonStyle(buttonLightStyle())
                             .alert("\(loginMessage)", isPresented: $showingAlert){}
-                    }
+                    }*/
                 }
                 .padding(.horizontal, 20)
                 
