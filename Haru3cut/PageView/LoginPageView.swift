@@ -106,10 +106,11 @@ struct LoginPageView: View {
                             .navigationBarTitle("")
                     )
                     
-                   // let loginMessage = loginCheck(email: email, password: password)
+                   //print(loginCheck(email: email, password: password))
                     
                     Button("로그인", action: {
                         if loginCheck(email: email, password: password) == "ok"{
+                            
                             NavigationLink(destination: MyTabView(), label:{})
                                 .navigationBarTitle("")
                                 .navigationBarHidden(true)
@@ -117,17 +118,21 @@ struct LoginPageView: View {
                             showingAlert = true
                         }
                     }) .buttonStyle(buttonLightStyle())
+                        .alert("이메일 또는 패스워드가 틀렸습니다", isPresented: $showingAlert){}
                    // MARK: - need to fix alert
-/*                    if loginMessage == "로그인되었습니다" {
+ /*                   if loginCheck(email: email, password: password) == "ok" {
                         NavigationLink(destination: MyTabView(), label:{Text("로그인")})
                             .navigationBarTitle("")
                             .navigationBarHidden(true)
                             .buttonStyle(buttonLightStyle())
                             
                     }else{
-                        Button("로그인",action: {showingAlert = true})
+                        
+                        Button("로그인",action: {showingAlert = true
+                            print(loginCheck(email: email, password: password))
+                        })
                             .buttonStyle(buttonLightStyle())
-                            .alert("\(loginMessage)", isPresented: $showingAlert){}
+                            .alert("이메일 또는 패스워드가 틀렸습니다", isPresented: $showingAlert){}
                     }*/
                 }
                 .padding(.horizontal, 20)
