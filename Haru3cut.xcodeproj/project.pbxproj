@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		018D4D2B69538899426C2071 /* Pods_Haru3cut.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47412EF00CEE5BDE99922205 /* Pods_Haru3cut.framework */; };
+		3619A91AAA28D158DD70FF7C /* Pods_Haru3cut_Haru3cutUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8362BB82B8A9D633D24EDC8B /* Pods_Haru3cut_Haru3cutUITests.framework */; };
+		73D80E36A220A1026D71F614 /* Pods_Haru3cutTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E2654A915E318ECDB73BCE3 /* Pods_Haru3cutTests.framework */; };
 		A79DE7C227EB123A002948F1 /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79DE7C127EB123A002948F1 /* MyPageView.swift */; };
 		A79DE7C627EB4F62002948F1 /* WritingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79DE7C527EB4F62002948F1 /* WritingPageView.swift */; };
 		A7B6E2E527E1CBDC000D8B6F /* LoginCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B6E2E427E1CBDC000D8B6F /* LoginCheck.swift */; };
@@ -72,6 +75,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3940451C5FA8EABC7B21812E /* Pods-Haru3cut.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Haru3cut.release.xcconfig"; path = "Target Support Files/Pods-Haru3cut/Pods-Haru3cut.release.xcconfig"; sourceTree = "<group>"; };
+		47412EF00CEE5BDE99922205 /* Pods_Haru3cut.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Haru3cut.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5835716FD194EC229574FC23 /* Pods-Haru3cut-Haru3cutUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Haru3cut-Haru3cutUITests.release.xcconfig"; path = "Target Support Files/Pods-Haru3cut-Haru3cutUITests/Pods-Haru3cut-Haru3cutUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6487323B41E2850F85113AF3 /* Pods-Haru3cutTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Haru3cutTests.release.xcconfig"; path = "Target Support Files/Pods-Haru3cutTests/Pods-Haru3cutTests.release.xcconfig"; sourceTree = "<group>"; };
+		8362BB82B8A9D633D24EDC8B /* Pods_Haru3cut_Haru3cutUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Haru3cut_Haru3cutUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		87B8204617316EFA4C10EAE1 /* Pods-Haru3cut.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Haru3cut.debug.xcconfig"; path = "Target Support Files/Pods-Haru3cut/Pods-Haru3cut.debug.xcconfig"; sourceTree = "<group>"; };
+		8E2654A915E318ECDB73BCE3 /* Pods_Haru3cutTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Haru3cutTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A79DE7C127EB123A002948F1 /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
 		A79DE7C527EB4F62002948F1 /* WritingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingPageView.swift; sourceTree = "<group>"; };
 		A7B6E2E427E1CBDC000D8B6F /* LoginCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCheck.swift; sourceTree = "<group>"; };
@@ -100,6 +110,8 @@
 		A7F1FFF127D108C3005B1D2A /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		A7F1FFF927D10CB0005B1D2A /* LoginPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageView.swift; sourceTree = "<group>"; };
 		A7F1FFFD27D10CC1005B1D2A /* RegisterPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageView.swift; sourceTree = "<group>"; };
+		D3616DE5C413FB9428933D8C /* Pods-Haru3cut-Haru3cutUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Haru3cut-Haru3cutUITests.debug.xcconfig"; path = "Target Support Files/Pods-Haru3cut-Haru3cutUITests/Pods-Haru3cut-Haru3cutUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DBC53F9AF506E4E6A3190D01 /* Pods-Haru3cutTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Haru3cutTests.debug.xcconfig"; path = "Target Support Files/Pods-Haru3cutTests/Pods-Haru3cutTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				018D4D2B69538899426C2071 /* Pods_Haru3cut.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73D80E36A220A1026D71F614 /* Pods_Haru3cutTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,12 +135,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3619A91AAA28D158DD70FF7C /* Pods_Haru3cut_Haru3cutUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		715B26B45D8648773FC4D230 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				87B8204617316EFA4C10EAE1 /* Pods-Haru3cut.debug.xcconfig */,
+				3940451C5FA8EABC7B21812E /* Pods-Haru3cut.release.xcconfig */,
+				D3616DE5C413FB9428933D8C /* Pods-Haru3cut-Haru3cutUITests.debug.xcconfig */,
+				5835716FD194EC229574FC23 /* Pods-Haru3cut-Haru3cutUITests.release.xcconfig */,
+				DBC53F9AF506E4E6A3190D01 /* Pods-Haru3cutTests.debug.xcconfig */,
+				6487323B41E2850F85113AF3 /* Pods-Haru3cutTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9841CD32A4ED5CEBF9634824 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				47412EF00CEE5BDE99922205 /* Pods_Haru3cut.framework */,
+				8362BB82B8A9D633D24EDC8B /* Pods_Haru3cut_Haru3cutUITests.framework */,
+				8E2654A915E318ECDB73BCE3 /* Pods_Haru3cutTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A7F1000927D10D12005B1D2A /* PageView */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +201,8 @@
 				A7F1FFD627CF5E66005B1D2A /* Haru3cutTests */,
 				A7F1FFE027CF5E66005B1D2A /* Haru3cutUITests */,
 				A7F1FFBF27CF5E64005B1D2A /* Products */,
+				715B26B45D8648773FC4D230 /* Pods */,
+				9841CD32A4ED5CEBF9634824 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -224,10 +265,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A7F1FFE727CF5E66005B1D2A /* Build configuration list for PBXNativeTarget "Haru3cut" */;
 			buildPhases = (
+				86D35F4D407BED57CAED0407 /* [CP] Check Pods Manifest.lock */,
 				A7F1FFBA27CF5E64005B1D2A /* Sources */,
 				A7F1FFBB27CF5E64005B1D2A /* Frameworks */,
 				A7F1FFBC27CF5E64005B1D2A /* Resources */,
 				A7F1FFF027D106C1005B1D2A /* ShellScript */,
+				F9B95C2F35E33458FC0899E6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -242,6 +285,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A7F1FFEA27CF5E66005B1D2A /* Build configuration list for PBXNativeTarget "Haru3cutTests" */;
 			buildPhases = (
+				5CCB2354374F82BBFEB74FCD /* [CP] Check Pods Manifest.lock */,
 				A7F1FFCF27CF5E66005B1D2A /* Sources */,
 				A7F1FFD027CF5E66005B1D2A /* Frameworks */,
 				A7F1FFD127CF5E66005B1D2A /* Resources */,
@@ -260,9 +304,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A7F1FFED27CF5E66005B1D2A /* Build configuration list for PBXNativeTarget "Haru3cutUITests" */;
 			buildPhases = (
+				251D90EED235214B5BC2275D /* [CP] Check Pods Manifest.lock */,
 				A7F1FFD927CF5E66005B1D2A /* Sources */,
 				A7F1FFDA27CF5E66005B1D2A /* Frameworks */,
 				A7F1FFDB27CF5E66005B1D2A /* Resources */,
+				2A7318EAE8AA269109A82D68 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -347,6 +393,89 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		251D90EED235214B5BC2275D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Haru3cut-Haru3cutUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2A7318EAE8AA269109A82D68 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Haru3cut-Haru3cutUITests/Pods-Haru3cut-Haru3cutUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Haru3cut-Haru3cutUITests/Pods-Haru3cut-Haru3cutUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Haru3cut-Haru3cutUITests/Pods-Haru3cut-Haru3cutUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5CCB2354374F82BBFEB74FCD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Haru3cutTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		86D35F4D407BED57CAED0407 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Haru3cut-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A7F1FFF027D106C1005B1D2A /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -363,6 +492,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		F9B95C2F35E33458FC0899E6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Haru3cut/Pods-Haru3cut-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Haru3cut/Pods-Haru3cut-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Haru3cut/Pods-Haru3cut-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -562,6 +708,7 @@
 		};
 		A7F1FFE827CF5E66005B1D2A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87B8204617316EFA4C10EAE1 /* Pods-Haru3cut.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -593,6 +740,7 @@
 		};
 		A7F1FFE927CF5E66005B1D2A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3940451C5FA8EABC7B21812E /* Pods-Haru3cut.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -622,6 +770,7 @@
 		};
 		A7F1FFEB27CF5E66005B1D2A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBC53F9AF506E4E6A3190D01 /* Pods-Haru3cutTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -642,6 +791,7 @@
 		};
 		A7F1FFEC27CF5E66005B1D2A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6487323B41E2850F85113AF3 /* Pods-Haru3cutTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -662,6 +812,7 @@
 		};
 		A7F1FFEE27CF5E66005B1D2A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3616DE5C413FB9428933D8C /* Pods-Haru3cut-Haru3cutUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -680,6 +831,7 @@
 		};
 		A7F1FFEF27CF5E66005B1D2A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5835716FD194EC229574FC23 /* Pods-Haru3cut-Haru3cutUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
