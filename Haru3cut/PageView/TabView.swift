@@ -42,7 +42,8 @@ struct MyTabView: View {
                  .accentColor(Color.pp)
                 
              }
-         }
+         }//.ignoresSafeArea(.all)
+             //.navigationBarBackButtonHidden(true)
          //}
      }
 }
