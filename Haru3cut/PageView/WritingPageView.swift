@@ -11,6 +11,7 @@ import SwiftUI
 struct WritingPageView: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var checkPrivate = true
+    @State private var showingAlert = false
     
     @State private var sourceType: UIImagePickerController.SourceType = .photoLibrary
     @State private var selectedImage: UIImage?
@@ -22,6 +23,7 @@ struct WritingPageView: View {
                 Text("글쓰기")
                     .font(.title3)
                     .fontWeight(.semibold)
+                    .padding(.leading,25)
                     Spacer()
                     Toggle("private", isOn: $checkPrivate)
                         .toggleStyle(CheckBox())
@@ -31,39 +33,55 @@ struct WritingPageView: View {
                     })
                         .buttonStyle(.bordered)
             }.padding()
+                .padding(.top,35)
             
             Divider()
             
             if selectedImage != nil {
-                Image(uiImage: selectedImage!)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width:300,height:300)
+                Button(action: {
+                    self.showingAlert.toggle()
+                },label: {Image(uiImage: selectedImage!)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 300, height: 300)
+                })
+                    .alert("사진을 선택하세요", isPresented: $showingAlert){
+                        Button("camera", action: {
+                            self.sourceType = .camera
+                            self.isImagePickerDisplay.toggle()
+                        })
+                        Button("gallery", action: {
+                            self.sourceType = .photoLibrary
+                            self.isImagePickerDisplay.toggle()
+                        })
+                        Button("cancel", action: {})
+                    }
+                    .padding()
             } else {
-                Image(systemName: "camera")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
+                Button(action: {
+                    self.showingAlert.toggle()
+                },label: {Text("Add Image")})
+                    .alert("사진을 선택하세요", isPresented: $showingAlert){
+                        Button("camera", action: {
+                            self.sourceType = .camera
+                            self.isImagePickerDisplay.toggle()
+                        })
+                        Button("gallery", action: {
+                            self.sourceType = .photoLibrary
+                            self.isImagePickerDisplay.toggle()
+                        })
+                        Button("cancel", action: {})
+                    }
                     .frame(width:300,height:300)
+                    .border(Color.pp)
+                    .foregroundColor(Color.pp)
+                    .background(Color.white)
+                    .padding()
             }
-            
-            Button("Camera"){
-                self.sourceType = .camera
-                self.isImagePickerDisplay.toggle()
-            }.padding()
-            
-            Button("Gallery"){
-                self.sourceType = .photoLibrary
-                self.isImagePickerDisplay.toggle()
-            }.padding()
-            /*Button("Image",action: {})
-                .frame(width:300,height:300)
-                .border(Color.pp)
-                .foregroundColor(Color.pp)
-                .background(Color.white)
-                .padding()*/
             Spacer()
+            
         }//.navigationBarTitleDisplayMode(.inline)
-        //.edgesIgnoringSafeArea(.top)
+        .edgesIgnoringSafeArea(.top)
         //.navigationBarHidden(true)
         .sheet(isPresented: self.$isImagePickerDisplay){
             ImagePickerView(selectedImage:self.$selectedImage, sourceType: self.sourceType)
