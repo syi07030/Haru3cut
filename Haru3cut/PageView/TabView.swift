@@ -12,10 +12,12 @@ struct MyTabView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State private var showSearch = false
     @State private var isEditing = false
+    
      var body: some View {
+         //NavigationView{
          ZStack {
              VStack {
-                 TabView {
+                 TabView() {
                      MyPostPageView()
                          .tabItem {
                              Image("myDiary").renderingMode(.template)
@@ -38,9 +40,10 @@ struct MyTabView: View {
                          }
                  }
                  .accentColor(Color.pp)
+                
              }
-         }.ignoresSafeArea(.all)
-             .navigationBarBackButtonHidden(true)
+         }
+         //}
      }
 }
 
