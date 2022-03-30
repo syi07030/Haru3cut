@@ -25,9 +25,6 @@ struct MyPostPageView: View {
                     Spacer()
                     Divider()
                 }
-                //.ignoresSafeArea()
-                .navigationBarTitle("")
-                .navigationBarHidden(true)
                 
                 NavigationLink(destination: WritingPageView(), label:{
                     Image(systemName: "pencil")
@@ -37,10 +34,8 @@ struct MyPostPageView: View {
                         .font(.largeTitle)
                         .foregroundColor(.white)})
                     .padding()
-                    .navigationTitle("")
-                    .navigationBarTitle("",displayMode: .inline)
-                    .navigationBarHidden(true)
             }
+            .hiddenNavigationBarStyle()
         }
     }
 }
