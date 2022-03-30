@@ -80,6 +80,7 @@ struct MyPageView: View {
             
         }
         .hiddenNavigationBarStyle()
+            
         }
     }
 }
