@@ -40,10 +40,9 @@ struct MyTabView: View {
                          }
                  }
                  .accentColor(Color.pp)
-                
-             }//.ignoresSafeArea(.all)
-                 //.navigationBarBackButtonHidden(true)
-         }
+            }
+         }//.ignoresSafeArea(.all)
+             //.navigationBarBackButtonHidden(true)
          //}
      }
 }
