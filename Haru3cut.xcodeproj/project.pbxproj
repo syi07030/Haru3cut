@@ -89,6 +89,7 @@
 		A7B6E2E827E1E55B000D8B6F /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		A7BB65B927E34F970050404A /* ShareData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareData.swift; sourceTree = "<group>"; };
 		A7BB65BB27E352530050404A /* ErrorMessageDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessageDesign.swift; sourceTree = "<group>"; };
+		A7E0C89F27F4363D00DD2376 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7F1000127D10CD8005B1D2A /* AccountSelectPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSelectPageView.swift; sourceTree = "<group>"; };
 		A7F1000527D10D06005B1D2A /* MyPostPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostPageView.swift; sourceTree = "<group>"; };
 		A7F1001C27D5A0A5005B1D2A /* TextFieldDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDesign.swift; sourceTree = "<group>"; };
@@ -152,7 +153,6 @@
 				DBC53F9AF506E4E6A3190D01 /* Pods-Haru3cutTests.debug.xcconfig */,
 				6487323B41E2850F85113AF3 /* Pods-Haru3cutTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -219,6 +219,7 @@
 		A7F1FFC027CF5E64005B1D2A /* Haru3cut */ = {
 			isa = PBXGroup;
 			children = (
+				A7E0C89F27F4363D00DD2376 /* Info.plist */,
 				A7F1FFC127CF5E64005B1D2A /* Haru3cutApp.swift */,
 				A7B6E2E427E1CBDC000D8B6F /* LoginCheck.swift */,
 				A7B6E2E627E1DC4F000D8B6F /* RegisterCheck.swift */,
@@ -718,7 +719,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Haru3cut/Preview Content\"";
 				DEVELOPMENT_TEAM = 74F6C3DL5Z;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = /Users/hgy/Desktop/hgy/Haru3cut/Haru3cut/Haru3cut/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -749,7 +751,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Haru3cut/Preview Content\"";
 				DEVELOPMENT_TEAM = 74F6C3DL5Z;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = /Users/hgy/Desktop/hgy/Haru3cut/Haru3cut/Haru3cut/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

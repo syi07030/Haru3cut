@@ -9,34 +9,38 @@ import SwiftUI
 
 struct MyPostPageView: View {
     @State var searchText = ""
+    
     var body: some View {
-        ZStack(alignment: .bottomTrailing) {
-            VStack {
-                HStack(spacing: 10) {
-                    SearchBar(text: $searchText)
+        NavigationView{
+            ZStack(alignment: .bottomTrailing) {
+                VStack {
+                    HStack(spacing: 10) {
+                        SearchBar(text: $searchText)
+                    }
+                        .padding()
+                        //.padding(.top,30)
+                        .frame(height: 40)
+                    Spacer()
+                    Text("My post")
+                    Spacer()
+                    Divider()
                 }
+                //.ignoresSafeArea()
+                .navigationBarTitle("")
+                .navigationBarHidden(true)
+                
+                NavigationLink(destination: WritingPageView(), label:{
+                    Image(systemName: "pencil")
+                        .padding()
+                        .background(Color.pp)
+                        .clipShape(Circle())
+                        .font(.largeTitle)
+                        .foregroundColor(.white)})
                     .padding()
-                    .frame(height: 40)
-                Spacer()
-                Text("My post")
-                Spacer()
-                Divider()
+                    .navigationTitle("")
+                    .navigationBarTitle("",displayMode: .inline)
+                    .navigationBarHidden(true)
             }
-            
-            WritingButton().padding()
-        }
-   }
-}
-
-struct WritingButton: View {
-    var body: some View {
-        Button(action: {}){
-            Image(systemName: "pencil")
-                .padding()
-                .background(Color.pp)
-                .clipShape(Circle())
-                .font(.largeTitle)
-                .foregroundColor(.white)
         }
     }
 }
