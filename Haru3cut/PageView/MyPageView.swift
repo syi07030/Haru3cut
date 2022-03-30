@@ -25,6 +25,7 @@ struct MyPageView: View {
                     Text("프로필 수정")
                         .padding()
                         //.font(.caption)
+                        //.background(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 2))
                         .border(Color.pp)
                 }.accentColor(Color.pp)
             }
