@@ -17,6 +17,9 @@ struct WritingPageView: View {
     @State private var selectedImage: UIImage?
     @State private var isImagePickerDisplay = false
     
+    @State var tag = ""
+    @State var tagClick = false
+    
     var body: some View {
         VStack{
              HStack{
@@ -25,13 +28,18 @@ struct WritingPageView: View {
                     .fontWeight(.semibold)
                     .padding(.leading,25)
                     Spacer()
-                    Toggle("private", isOn: $checkPrivate)
+                    Toggle("공개", isOn: $checkPrivate)
                         .toggleStyle(CheckBox())
                              
-                    Button("UPLOAD",action: {
+                    Button(action: {
                         //self.presentation.wrappedValue.dismiss()
-                    })
-                        .buttonStyle(.bordered)
+                    }){
+                        Image(systemName: "square.and.arrow.up")
+                            .resizable()
+                            .frame(width: 25, height: 30)
+                            .padding(.bottom,10)
+                            .padding(.leading,10)
+                    }
             }.padding()
                 .padding(.top,35)
             
@@ -77,6 +85,17 @@ struct WritingPageView: View {
                     .foregroundColor(Color.pp)
                     .background(Color.white)
                     .padding()
+            }
+            TextField("Enter the tag",text: $tag,onEditingChanged: { edit in self.tagClick = edit })
+                .padding()
+                .textFieldStyle(TextStyle(focused: $tagClick))
+            ScrollView{
+                ForEach(0..<20, id:\.self){ num in
+                    HStack{
+                        Text("\(num)").padding()
+                        Spacer()
+                    }.padding(.leading,15)
+                }
             }
             Spacer()
             
@@ -139,11 +158,10 @@ class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerContro
     }
 }
 
-
 #if DEBUG
 struct WritingPageView_Previews: PreviewProvider {
     static var previews: some View {
-        PartyPageView()
+        WritingPageView()
     }
 }
 #endif
