@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import Alamofire
 
-func postCheck(nickName: String, nickNameTag: String, image: String, tag: String, privatePost: Bool) -> String {
+func postSave(nickName: String, nickNameTag: String, image: String, tag: String, privatePost: Bool) -> String {
     let url = "http://3.36.88.174:8000/post" //확인 필요
     let encoder = JSONEncoder()
     
@@ -37,6 +37,41 @@ func postCheck(nickName: String, nickNameTag: String, image: String, tag: String
     
     print(message)
     return "ok"
+}
+
+func postShow() -> [Dictionary<String,String>] {
+    let url = "http://3.36.88.174:8000/post" //확인 필요
+    let decoder = JSONDecoder()
+    var returnJson = [Dictionary<String,String>]()
+    
+    let almo = AF.request(url, method: .post).validate(statusCode: 200..<300)
+    
+    almo.responseJSON(){ response in
+        switch response.result
+        {
+        case .success(let value):
+            
+            if let jsonObj = value as? [Dictionary<String,String>]
+            {
+                returnJson = jsonObj
+            }
+            
+        case .failure(let error):
+            print("error: \(String(describing: error.errorDescription))")
+        }
+    }
+    
+    return returnJson
+  
+    /*
+    AF.request(url).responseJson { (response) in
+        switch response.result {
+        case .success(let res):
+            do {
+                let jsonData = try JSONSerialization.data(withJSONObject: res, options: .prettyPrinted)
+            }
+        }
+    }*/
 }
 
 struct PostRequest: Codable {
