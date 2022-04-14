@@ -10,6 +10,7 @@
 		018D4D2B69538899426C2071 /* Pods_Haru3cut.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47412EF00CEE5BDE99922205 /* Pods_Haru3cut.framework */; };
 		3619A91AAA28D158DD70FF7C /* Pods_Haru3cut_Haru3cutUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8362BB82B8A9D633D24EDC8B /* Pods_Haru3cut_Haru3cutUITests.framework */; };
 		73D80E36A220A1026D71F614 /* Pods_Haru3cutTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E2654A915E318ECDB73BCE3 /* Pods_Haru3cutTests.framework */; };
+		A756F06F2806BEF400EB36B0 /* PostCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756F06E2806BEF400EB36B0 /* PostCheck.swift */; };
 		A76BEF2927FAD339002AD9A4 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76BEF2827FAD339002AD9A4 /* test.swift */; };
 		A79DE7C227EB123A002948F1 /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79DE7C127EB123A002948F1 /* MyPageView.swift */; };
 		A79DE7C627EB4F62002948F1 /* WritingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79DE7C527EB4F62002948F1 /* WritingPageView.swift */; };
@@ -83,6 +84,7 @@
 		8362BB82B8A9D633D24EDC8B /* Pods_Haru3cut_Haru3cutUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Haru3cut_Haru3cutUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87B8204617316EFA4C10EAE1 /* Pods-Haru3cut.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Haru3cut.debug.xcconfig"; path = "Target Support Files/Pods-Haru3cut/Pods-Haru3cut.debug.xcconfig"; sourceTree = "<group>"; };
 		8E2654A915E318ECDB73BCE3 /* Pods_Haru3cutTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Haru3cutTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A756F06E2806BEF400EB36B0 /* PostCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCheck.swift; sourceTree = "<group>"; };
 		A76BEF2827FAD339002AD9A4 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		A79DE7C127EB123A002948F1 /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
 		A79DE7C527EB4F62002948F1 /* WritingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingPageView.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 				A7F1FFC127CF5E64005B1D2A /* Haru3cutApp.swift */,
 				A7B6E2E427E1CBDC000D8B6F /* LoginCheck.swift */,
 				A7B6E2E627E1DC4F000D8B6F /* RegisterCheck.swift */,
+				A756F06E2806BEF400EB36B0 /* PostCheck.swift */,
 				A7BB65B927E34F970050404A /* ShareData.swift */,
 				A7F1000927D10D12005B1D2A /* PageView */,
 				A7F1001327D5A051005B1D2A /* Design */,
@@ -537,6 +540,7 @@
 				A76BEF2927FAD339002AD9A4 /* test.swift in Sources */,
 				A7F1000227D10CD8005B1D2A /* AccountSelectPageView.swift in Sources */,
 				A7F1003527DA0D39005B1D2A /* ButtonDesign.swift in Sources */,
+				A756F06F2806BEF400EB36B0 /* PostCheck.swift in Sources */,
 				A7F1FFC227CF5E64005B1D2A /* Haru3cutApp.swift in Sources */,
 				A7B6E2E727E1DC4F000D8B6F /* RegisterCheck.swift in Sources */,
 				A7B6E2E927E1E55B000D8B6F /* TabView.swift in Sources */,

@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftUI
+import TagTextField
 
 struct WritingPageView: View {
     @Environment(\.presentationMode) var presentationMode
@@ -19,6 +20,11 @@ struct WritingPageView: View {
     
     @State var tag = ""
     @State var tagClick = false
+    
+    @State var tags = [String]()
+    @State var keyword = ""
+    
+    var allTags = ["운동", "일상", "취미"]
     
     var body: some View {
         VStack{
@@ -86,17 +92,24 @@ struct WritingPageView: View {
                     .background(Color.white)
                     .padding()
             }
-            TextField("Enter the tag",text: $tag,onEditingChanged: { edit in self.tagClick = edit })
-                .padding()
-                .textFieldStyle(TextStyle(focused: $tagClick))
+            
+            //TagTextField(allTags, tag)
+            
+            TextField("Enter the tag...", text: $tag)
+                .padding(.leading)
+                .padding(.trailing)
+            
             ScrollView{
-                ForEach(0..<20, id:\.self){ num in
+                ForEach(allTags, id:\.self){ tag in
                     HStack{
-                        Text("\(num)").padding()
+                        Text("\(tag)").padding()
                         Spacer()
-                    }.padding(.leading,15)
+                    }
                 }
-            }
+            } .background(Color.ww)
+                .padding(.leading)
+                .padding(.trailing)
+                .padding(.bottom)
             Spacer()
             
         }//.navigationBarTitleDisplayMode(.inline)
@@ -151,8 +164,8 @@ class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerContro
         self.picker = picker
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        guard let selectedImage = info[.originalImage] as? UIImage else {return}
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        guard let selectedImage = info[.originalImage] as? UIImage else { return }
         self.picker.selectedImage = selectedImage
         self.picker.isPresented.wrappedValue.dismiss()
     }
