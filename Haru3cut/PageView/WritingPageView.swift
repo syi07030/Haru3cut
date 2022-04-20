@@ -93,12 +93,9 @@ struct WritingPageView: View {
                     .padding()
             }
             
-            //TagTextField(allTags, tag)
+            test()
             
-            TextField("Enter the tag...", text: $tag)
-                .padding(.leading)
-                .padding(.trailing)
-            
+            /*
             ScrollView{
                 ForEach(allTags, id:\.self){ tag in
                     HStack{
@@ -111,6 +108,7 @@ struct WritingPageView: View {
                 .padding(.trailing)
                 .padding(.bottom)
             Spacer()
+             */
             
         }//.navigationBarTitleDisplayMode(.inline)
         .edgesIgnoringSafeArea(.top)

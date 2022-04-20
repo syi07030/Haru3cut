@@ -5,6 +5,7 @@
 //  Created by HanGeunyoung on 2022/04/13.
 //
 
+/*
 import Foundation
 import SwiftUI
 import Alamofire
@@ -83,3 +84,4 @@ struct PostRequest: Codable {
     var createdAt: String
     var updatedAt: String
 }
+*/
