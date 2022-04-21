@@ -11,6 +11,8 @@ import Alamofire
 struct MyPostPageView: View {
     @State var searchText = ""
     
+    let postResults = postMethod()
+    
     //let almo = AF.request("http://3.36.88.174:8000/mock/postall",method: .post).validate(statusCode: 200..<300)
     
     var body: some View {
@@ -23,22 +25,18 @@ struct MyPostPageView: View {
                         .padding()
                         .frame(height: 40)
                     Spacer()
-                    Text("\(postMethod2())")
-                   /* List {
-                        ForEach(allTags, id: \.self) { tag in
-                            Button(action: {
-                                if tags.contains(tag) == false {
-                                    tags.append(tag)
-                                }
-                            }, label: {
-                                Text(tag)
-                                    .padding()
-                            })
+                    Button(action: {
+                        print(postResults[0].nickName)
+                    }, label: {Text("postResult")})
+                    List {
+                        ForEach(postResults[0], id: \.self) { diary in
+                            Text(diary)
                             .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                             .listRowBackground(Color(UIColor.systemGray6))
                         }
+                         
                     }
-                    .listStyle(.inset)*/
+                    .listStyle(.inset)
                     //Text("\(postShow())")
                     //Text("My post")
                     Spacer()
@@ -100,33 +98,130 @@ func postShow() -> String {
     return str
 }
 
-struct postResult: Codable {
-    var nickNameTag: Int
-    var avatar: String
-    var id: String
-    var image: String
-    var tag: [String]
-    var privatePost: Bool
-    var createdAt: String
-    var updatedAt: String
-    var nickName: String
+public struct postResult: Codable {
+    var nickNameTag: Int = 0
+    var avatar: String = ""
+    var id: String = ""
+    var image: String = ""
+    var tag: [String] = [""]
+    var privatePost: Bool = true
+    var createdAt: String = ""
+    var updatedAt: String = ""
+    var nickName: String = ""
 }
 
 struct APIResponse: Codable {
     let postResults: [postResult]
 }
 
-func postMethod() -> String {
+public var results = [postResult]()
+
+func postMethod() -> [postResult] {
     let param: [String:Any] = ["nickName" : "test003","nickNameTag" : 6881]
+    //var results = [postResult]()
     AF.request("http://3.36.88.174:8000/post/getMyDiary", method: .post, parameters: param, encoding: JSONEncoding.default, headers: nil).validate(statusCode: 200 ..< 299).responseJSON { AFdata in
         switch AFdata.result {
         case .success(let obj):
             do {
-                print(AFdata.data!)
+                //print(obj)
+                if let nsDictionary = obj as? NSDictionary {
+                    for (key,value) in nsDictionary {
+                        //print("key: \(key), value: \(value)")
+                    }
+                    
+                    if let result = nsDictionary["result"] {
+                        //print(result)
+                        
+                        if let array = result as? NSArray {
+                            for i in array {
+                                //print(i)
+                                var r = postResult()
+                                if let resultDictionary = i as? NSDictionary {
+                                    for (key,value) in resultDictionary {
+                                        //print("key: \(key), value: \(value)")
+                                    }
+                                    //nickNameTag
+                                    if let nickNameTag = resultDictionary["nickNameTag"] as? Int{
+                                        r.nickNameTag = nickNameTag
+                                    } else {
+                                        print("error in nickNameTag")
+                                    }
+                                    //avatar
+                                    if let avatar = resultDictionary["avatar"] as? String{
+                                        r.avatar = avatar
+                                    } else {
+                                        print("error in avatar")
+                                    }
+                                    //id
+                                    if let id = resultDictionary["id"] as? String{
+                                        r.id = id
+                                    } else {
+                                        print("error in image")
+                                    }
+                                    //image
+                                    if let image = resultDictionary["image"] as? String{
+                                        r.image = image
+                                    } else {
+                                        print("error in image")
+                                    }
+                                    //tag
+                                    if let tag = resultDictionary["tag"] as? [String]{
+                                        r.tag = tag
+                                    } else {
+                                        print("error in tag")
+                                    }
+                                    //privatePost
+                                    if let privatePost = resultDictionary["privatePost"] as? Bool{
+                                        r.privatePost = privatePost
+                                    } else {
+                                        print("error in privatePost")
+                                    }
+                                    //createdAt
+                                    if let createdAt = resultDictionary["createdAt"] as? String{
+                                        r.createdAt = createdAt
+                                    } else {
+                                        print("error in createdAt")
+                                    }
+                                    //updatedAt
+                                    if let updatedAt = resultDictionary["updatedAt"] as? String{
+                                        r.updatedAt = updatedAt
+                                    } else {
+                                        print("error in updatedAt")
+                                    }
+                                    //nickName
+                                    if let nickName = resultDictionary["nickName"] as? String{
+                                        r.nickName = nickName
+                                    } else {
+                                        print("error in nickName")
+                                    }
+                                    //print(result)
+                                    results.append(r)
+                                    //var item = postResult(nickNameTag: resultDictionary["nickNameTag"] as?? Int, avatar: resultDictionary["avatar"] as?? String, id: resultDictionary["id"] as?? String, image: resultDictionary["image"] as?? String, tag: resultDictionary["tag"] as?? [String], privatePost: resultDictionary["privatePost"] as?? Bool, createdAt: resultDictionary["careatedAt"] as?? String, updatedAt: resultDictionary["updatedAt"] as?? String, nickName: resultDictionary["nickName"] as?? String)
+                                } else {
+                                    print("error in resultDictionary")
+                                }
+                                print("***************************************************** ")
+                                print(results)
+                                //print(type(of: results))
+                                //print(results[0])
+                                //print(results)
+                                //results.append(result)
+                            }
+                            
+                        } else {
+                            print("error in array")
+                        }
+                    } else {
+                        print("error result")
+                    }
+                } else {
+                    print("error type casting to nsdictionary")
+                }
+                
                 let dataJson = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
-                print(dataJson)
+                //print(dataJson)
                 let test = try dataJson as? [String:Any]
-                print(test)
+                //print(test)
              /*   let getData = try JSONDecoder().decode(APIResponse.self, from:dataJson)
                 for result in getData.postResults{
                     print(result)
@@ -164,21 +259,35 @@ func postMethod() -> String {
         default:
             return
         }
+        print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
+        print(results)
         
     }
-    return ""
+    print("----------------------------------------------")
+    print(results)
+    return results
 }
 
 
 func postMethod2() -> String {
     let param: [String:Any] = ["nickName" : "test003","nickNameTag" : 6881]
-    AF.request("http://3.36.88.174:8000/post/getMyDiary", method: .post, parameters: param, encoding: JSONEncoding.default, headers: nil).validate(statusCode: 200 ..< 299).responseDecodable(of:APIResponse.self) { response in
-        print(response)
-        guard let result = response.value else {
-            print("ERROR")
-            return}
-        print(result.postResults[0].nickName)
-        
+    var results = [postResult]()
+    AF.request("http://3.36.88.174:8000/post/getMyDiary", method: .post, parameters: param, encoding: JSONEncoding.default, headers: nil).validate(statusCode: 200 ..< 299).responseJSON { AFdata in
+        switch AFdata.result {
+        case .success(let obj):
+            do {
+                let dataJson = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
+                let getInstanceData = try JSONDecoder().decode(APIResponse.self, from: dataJson)
+                
+                print(getInstanceData)
+            } catch{
+            print(error.localizedDescription)
+            }
+            
+        default:
+            print("통신 실패")
+            return
+        }
     }
     return ""
 }
