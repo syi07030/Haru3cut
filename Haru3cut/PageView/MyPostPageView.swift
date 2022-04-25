@@ -7,6 +7,46 @@
 
 import SwiftUI
 import Alamofire
+import Combine
+
+struct MyDiaryRow: View{
+    //@StateObject private var imageLoader = URLImageLoader()
+    var diary: postResult
+    var body: some View{
+        VStack{
+            HStack{
+                Image("profile")
+                    .frame(width: 50, height: 50, alignment: .center)
+                    .cornerRadius(50)
+                    .overlay(RoundedRectangle(cornerRadius: 50)
+                    .stroke(Color.black, lineWidth: 2))
+                VStack{
+                    Text("\(diary.nickName)")
+                    Text("#\(diary.nickNameTag)")
+                }
+                Spacer()
+                Image(systemName: "eye.slash.fill")
+                Image(systemName: "pencil")
+                //Text("tags: \(diary.tag)")
+            }
+            /*
+            HStack{
+                ForEach(diary.tag, id:./self){ tag in
+                    Text("\(tag)")
+                }
+                Spacer()
+            }*/
+            AsyncImage(url:URL(string:diary.image))
+                .frame(width: 50, height: 50)
+            Image(diary.image)
+                //.resizable()
+                //.frame(width: 300, height: 300)
+                //.padding(.bottom,10)
+                //.padding(.leading,10)
+            //Text("image: \(diary.image)")
+        }
+    }
+}
 
 struct MyPostPageView: View {
     @State var searchText = ""
@@ -25,15 +65,13 @@ struct MyPostPageView: View {
                         .padding()
                         .frame(height: 40)
                     Spacer()
-                    Button(action: {
-                        print(postResults[0].nickName)
-                    }, label: {Text("postResult")})
-                    List {
-                        ForEach(postResults[0], id: \.self) { diary in
+                    List(postResults) { result in
+                        MyDiaryRow(diary: result)
+                        /*ForEach(postResults, id: \.self) { diary in
                             Text(diary)
                             .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                             .listRowBackground(Color(UIColor.systemGray6))
-                        }
+                        }*/
                          
                     }
                     .listStyle(.inset)
@@ -98,10 +136,10 @@ func postShow() -> String {
     return str
 }
 
-public struct postResult: Codable {
+public struct postResult: Identifiable { //codable로,,
     var nickNameTag: Int = 0
     var avatar: String = ""
-    var id: String = ""
+    public var id: String = ""
     var image: String = ""
     var tag: [String] = [""]
     var privatePost: Bool = true
@@ -110,9 +148,9 @@ public struct postResult: Codable {
     var nickName: String = ""
 }
 
-struct APIResponse: Codable {
+/*struct APIResponse: Codable {
     let postResults: [postResult]
-}
+}*/
 
 public var results = [postResult]()
 
@@ -269,7 +307,7 @@ func postMethod() -> [postResult] {
 }
 
 
-func postMethod2() -> String {
+/*func postMethod2() -> String {
     let param: [String:Any] = ["nickName" : "test003","nickNameTag" : 6881]
     var results = [postResult]()
     AF.request("http://3.36.88.174:8000/post/getMyDiary", method: .post, parameters: param, encoding: JSONEncoding.default, headers: nil).validate(statusCode: 200 ..< 299).responseJSON { AFdata in
@@ -290,7 +328,7 @@ func postMethod2() -> String {
         }
     }
     return ""
-}
+}*/
 
 
 
