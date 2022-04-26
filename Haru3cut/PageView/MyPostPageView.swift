@@ -9,9 +9,28 @@ import SwiftUI
 import Alamofire
 import Combine
 
+/*
+extension UIImageView {
+    func load(url: URL){
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url){
+                if let image = UIImage(data: data){
+                    DispatchQueue.main.async {
+                        self?.image = image
+                    }
+                } else {
+                    print("uiimage image error")
+                }
+            } else {
+                print("uiimage data error")
+            }
+        }
+    }
+}*/
 struct MyDiaryRow: View{
     //@StateObject private var imageLoader = URLImageLoader()
     var diary: postResult
+    //var image: UIImageView!
     var body: some View{
         VStack{
             HStack{
@@ -29,16 +48,22 @@ struct MyDiaryRow: View{
                 Image(systemName: "pencil")
                 //Text("tags: \(diary.tag)")
             }
-            /*
+            
             HStack{
-                ForEach(diary.tag, id:./self){ tag in
+                ForEach(diary.tag, id: \.self ){ tag in
                     Text("\(tag)")
                 }
                 Spacer()
-            }*/
-            AsyncImage(url:URL(string:diary.image))
-                .frame(width: 50, height: 50)
-            Image(diary.image)
+            }
+            //image.load(url: URL(string: diary.image)!)
+            AsyncImage(url:URL(string:diary.image)!){ image in
+                image.resizable()
+            } placeholder: {
+                Color.ww
+            }
+            .frame(width: 300, height: 300)
+            .clipShape(RoundedRectangle(cornerRadius: 25))
+            //Image(diary.image)
                 //.resizable()
                 //.frame(width: 300, height: 300)
                 //.padding(.bottom,10)
@@ -57,6 +82,7 @@ struct MyPostPageView: View {
     
     var body: some View {
         NavigationView{
+            
             ZStack(alignment: .bottomTrailing) {
                 VStack {
                     HStack(spacing: 10) {
@@ -155,6 +181,7 @@ public struct postResult: Identifiable { //codable로,,
 public var results = [postResult]()
 
 func postMethod() -> [postResult] {
+    //var results = [postResult]()
     let param: [String:Any] = ["nickName" : "test003","nickNameTag" : 6881]
     //var results = [postResult]()
     AF.request("http://3.36.88.174:8000/post/getMyDiary", method: .post, parameters: param, encoding: JSONEncoding.default, headers: nil).validate(statusCode: 200 ..< 299).responseJSON { AFdata in
@@ -233,8 +260,9 @@ func postMethod() -> [postResult] {
                                         print("error in nickName")
                                     }
                                     //print(result)
-                                    results.append(r)
-                                    //var item = postResult(nickNameTag: resultDictionary["nickNameTag"] as?? Int, avatar: resultDictionary["avatar"] as?? String, id: resultDictionary["id"] as?? String, image: resultDictionary["image"] as?? String, tag: resultDictionary["tag"] as?? [String], privatePost: resultDictionary["privatePost"] as?? Bool, createdAt: resultDictionary["careatedAt"] as?? String, updatedAt: resultDictionary["updatedAt"] as?? String, nickName: resultDictionary["nickName"] as?? String)
+                                    if results.filter{$0.image == r.image}.count == 0 {
+                                        results.append(r)
+                                    }
                                 } else {
                                     print("error in resultDictionary")
                                 }
@@ -245,7 +273,6 @@ func postMethod() -> [postResult] {
                                 //print(results)
                                 //results.append(result)
                             }
-                            
                         } else {
                             print("error in array")
                         }
