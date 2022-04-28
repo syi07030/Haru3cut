@@ -8,6 +8,7 @@
 import UIKit
 import SwiftUI
 import TagTextField
+import Alamofire
 
 struct WritingPageView: View {
     @Environment(\.presentationMode) var presentationMode
@@ -25,6 +26,7 @@ struct WritingPageView: View {
     @State var keyword = ""
     
     var allTags = ["운동", "일상", "취미"]
+    //var resultTag = TagTextField.returnTags(self.tags)
     
     var body: some View {
         VStack{
@@ -36,17 +38,18 @@ struct WritingPageView: View {
                     Spacer()
                     Toggle("공개", isOn: $checkPrivate)
                         .toggleStyle(CheckBox())
-                             
-                    Button(action: {
-                        //self.presentation.wrappedValue.dismiss()
-                    }){
-                        Image(systemName: "square.and.arrow.up")
-                            .resizable()
-                            .frame(width: 25, height: 30)
-                            .padding(.bottom,10)
-                            .padding(.leading,10)
-                    }
-            }.padding()
+                 
+                 NavigationLink(destination: MyPostPageView(), label:{
+                     Button(action: {
+                         writingPostMethod(nickName: "test003", nickNameTag: 6881, image: selectedImage!.jpegData(compressionQuality: 0.5)!, tag: test().tags, privatePost: true)
+                     }){
+                         Image(systemName: "square.and.arrow.up")
+                             .resizable()
+                             .frame(width: 25, height: 30)
+                             .padding(.bottom,10)
+                             .padding(.leading,10)
+                     }
+                 })}.padding()
                 .padding(.top,35)
             
             Divider()
@@ -95,28 +98,49 @@ struct WritingPageView: View {
             
             test()
             
-            /*
-            ScrollView{
-                ForEach(allTags, id:\.self){ tag in
-                    HStack{
-                        Text("\(tag)").padding()
-                        Spacer()
-                    }
-                }
-            } .background(Color.ww)
-                .padding(.leading)
-                .padding(.trailing)
-                .padding(.bottom)
-            Spacer()
-             */
-            
         }//.navigationBarTitleDisplayMode(.inline)
-        .edgesIgnoringSafeArea(.top)
+        //.edgesIgnoringSafeArea(.top)
         //.navigationBarHidden(true)
         .sheet(isPresented: self.$isImagePickerDisplay){
             ImagePickerView(selectedImage:self.$selectedImage, sourceType: self.sourceType)
         }
     }
+}
+
+public struct writingForm: Codable {
+    var nickNameTag: Int = 0
+    var image: String = ""
+    var tag: [String] = [""]
+    var privatePost: Bool = true
+    var createdAt: String = ""
+    var nickName: String = ""
+}
+
+func writingPostMethod(nickName: String, nickNameTag: Int, image: Data, tag: [String], privatePost: Bool) {
+    let header: [String:String] = ["Content-Type":"multipart/form-data"]
+    let param: [String:Any] = [
+        "nickName" : nickName,
+        "nickNameTag" : nickNameTag,
+        "tag": tag,
+        "privatePost": privatePost
+    ]
+    AF.upload(multipartFormData: { multipartFormData in
+        for (key,value) in param {
+            multipartFormData.append("\(value)".data(using: .utf8)!,withName:key, mimeType: "text/plain")
+        }
+        multipartFormData.append(image, withName:"image", fileName:"\(image).jpg", mimeType: "image/jpg")
+    }, to:"http://3.36.88.174:8000/post/newDiary", method: .post)
+    .responseJSON(){ response in
+        switch response.result{
+        case .success:
+            if let data = try! response.result.get() as? String{
+                print("\(data)")
+            }
+        case .failure(let error):
+            print("Error:\(error)")
+        }
+    }
+    return
 }
 
 struct CheckBox: ToggleStyle {
