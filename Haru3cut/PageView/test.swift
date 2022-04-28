@@ -188,6 +188,12 @@ public struct TagTextField: View {
         }
         return rows
     }
+    
+    /*
+    func returnTags() -> [String] {
+        return tags
+    }
+     */
 }
 
 public struct TagView: View {
