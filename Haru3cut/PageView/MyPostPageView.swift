@@ -9,28 +9,11 @@ import SwiftUI
 import Alamofire
 import Combine
 
-/*
-extension UIImageView {
-    func load(url: URL){
-        DispatchQueue.global().async { [weak self] in
-            if let data = try? Data(contentsOf: url){
-                if let image = UIImage(data: data){
-                    DispatchQueue.main.async {
-                        self?.image = image
-                    }
-                } else {
-                    print("uiimage image error")
-                }
-            } else {
-                print("uiimage data error")
-            }
-        }
-    }
-}*/
 struct MyDiaryRow: View{
-    //@StateObject private var imageLoader = URLImageLoader()
     var diary: postResult
-    //var image: UIImageView!
+    @State private var postID = self.diary.id
+    @State private var nickName = self.diary.nickName
+    @State private var nickNameTag = self.diary.nickNameTag
     var body: some View{
         VStack{
             HStack{
@@ -45,8 +28,10 @@ struct MyDiaryRow: View{
                 }
                 Spacer()
                 Image(systemName: "eye.slash.fill")
-                Image(systemName: "pencil")
-                //Text("tags: \(diary.tag)")
+                NavigationLink(destination: GetOneDiaryPageView(postID: $postID, nickName: $nickName, nickNameTag: $nickNameTag), label:{
+                        Image(systemName: "pencil")
+                })
+                .padding()
             }
             
             HStack{
@@ -55,7 +40,6 @@ struct MyDiaryRow: View{
                 }
                 Spacer()
             }
-            //image.load(url: URL(string: diary.image)!)
             AsyncImage(url:URL(string:diary.image)!){ image in
                 image.resizable()
             } placeholder: {
@@ -63,22 +47,13 @@ struct MyDiaryRow: View{
             }
             .frame(width: 300, height: 300)
             .clipShape(RoundedRectangle(cornerRadius: 25))
-            //Image(diary.image)
-                //.resizable()
-                //.frame(width: 300, height: 300)
-                //.padding(.bottom,10)
-                //.padding(.leading,10)
-            //Text("image: \(diary.image)")
         }
     }
 }
 
 struct MyPostPageView: View {
     @State var searchText = ""
-    
     let postResults = postMethod()
-    
-    //let almo = AF.request("http://3.36.88.174:8000/mock/postall",method: .post).validate(statusCode: 200..<300)
     
     var body: some View {
         NavigationView{
@@ -93,16 +68,8 @@ struct MyPostPageView: View {
                     Spacer()
                     List(postResults) { result in
                         MyDiaryRow(diary: result)
-                        /*ForEach(postResults, id: \.self) { diary in
-                            Text(diary)
-                            .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-                            .listRowBackground(Color(UIColor.systemGray6))
-                        }*/
-                         
                     }
                     .listStyle(.inset)
-                    //Text("\(postShow())")
-                    //Text("My post")
                     Spacer()
                     Divider()
                 }
@@ -122,7 +89,7 @@ struct MyPostPageView: View {
 }
 
 func postShow() -> String {
-    let url = "http://3.36.88.174:8000/post/getMyDiary"
+    let url = "http://3.36.88.174:8000/diary/getMyDiary"
     let param: [String:Any] = ["nickName" : "test003","nickNameTag" : 6881]
     let encoder = JSONEncoder()
     let decoder = JSONDecoder()
@@ -147,18 +114,6 @@ func postShow() -> String {
             str = "error"
         }
     }
-    
-    //return returnJson
-  
-    /*
-    AF.request(url).responseJson { (response) in
-        switch response.result {
-        case .success(let res):
-            do {
-                let jsonData = try JSONSerialization.data(withJSONObject: res, options: .prettyPrinted)
-            }
-        }
-    }*/
     return str
 }
 
@@ -174,17 +129,11 @@ public struct postResult: Identifiable { //codable로,,
     var nickName: String = ""
 }
 
-/*struct APIResponse: Codable {
-    let postResults: [postResult]
-}*/
-
 public var results = [postResult]()
 
 func postMethod() -> [postResult] {
-    //var results = [postResult]()
     let param: [String:Any] = ["nickName" : "test003","nickNameTag" : 6881]
-    //var results = [postResult]()
-    AF.request("http://3.36.88.174:8000/post/getMyDiary", method: .post, parameters: param, encoding: JSONEncoding.default, headers: nil).validate(statusCode: 200 ..< 299).responseJSON { AFdata in
+    AF.request("http://3.36.88.174:8000/diary/getMyDiary", method: .post, parameters: param, encoding: JSONEncoding.default, headers: nil).validate(statusCode: 200 ..< 299).responseJSON { AFdata in
         switch AFdata.result {
         case .success(let obj):
             do {
@@ -268,10 +217,6 @@ func postMethod() -> [postResult] {
                                 }
                                 print("***************************************************** ")
                                 print(results)
-                                //print(type(of: results))
-                                //print(results[0])
-                                //print(results)
-                                //results.append(result)
                             }
                         } else {
                             print("error in array")
@@ -287,36 +232,6 @@ func postMethod() -> [postResult] {
                 //print(dataJson)
                 let test = try dataJson as? [String:Any]
                 //print(test)
-             /*   let getData = try JSONDecoder().decode(APIResponse.self, from:dataJson)
-                for result in getData.postResults{
-                    print(result)
-                }*/
-                /*
-                guard let jsonObject = try JSONSerialization.jsonObject(with: AFdata.data!) as? [String: Any] else {
-                    print("Error: Cannot convert data to JSON object")
-                    return
-                }
-                print("------------------------------------------------")
-                print(jsonObject)
-                guard let prettyJsonData = try? JSONSerialization.data(withJSONObject: jsonObject, options: .prettyPrinted) else {
-                    print("Error: Cannot convert JSON object to Pretty JSON data")
-                    return
-                }
-                print("------------------------------------------------")
-                print(prettyJsonData)
-                guard let prettyPrintedJson = String(data: prettyJsonData, encoding: .utf8) else {
-                    print("Error: Could print JSON in String")
-                    return
-                }
-                print("------------------------------------------------")
-                print(prettyPrintedJson)
-
-
-                guard let results = try? JSONDecoder().decode(APIResponse.self,from:prettyJsonData) else{
-                    print("error error error")
-                    return
-                }
-                */
             } catch {
                 print("Error: Trying to convert JSON data to string")
                 return
@@ -356,8 +271,6 @@ func postMethod() -> [postResult] {
     }
     return ""
 }*/
-
-
 
 #if DEBUG
 struct MyPostPageView_Previews: PreviewProvider {
