@@ -9,6 +9,7 @@ import SwiftUI
 import TagTextField
 
 var allTags: [String] = ["운동","일상","취미","일기"]
+var totalTags = [String]()
 
 struct test: View {
  
@@ -36,8 +37,6 @@ struct test: View {
                HStack(spacing: 10) {
                    TagTextField(tags: $tags, keyword: $keyword, theme: self.theme, placeholder: "Enter the Tags...") { _ in
                        return keyword.lowercased()
-                       
-                       //allTags.filter{$0.lowercased().contains(keyword.lowercased()) == true}.first
                    }
                    .padding(.leading,6)
                    .padding(.trailing,6)
@@ -55,6 +54,7 @@ struct test: View {
                            Button(action: {
                                if tags.contains(tag) == false {
                                    tags.append(tag)
+                                   print(tags)
                                }
                            }, label: {
                                Text(tag)
@@ -104,6 +104,9 @@ struct test: View {
                    }
                    .listStyle(.inset)
                }
+    }
+    func returnTag() -> [String] {
+        return tags
     }
 }
 
@@ -188,6 +191,12 @@ public struct TagTextField: View {
         }
         return rows
     }
+    
+    /*
+    func returnTags() -> [String] {
+        return tags
+    }
+     */
 }
 
 public struct TagView: View {
