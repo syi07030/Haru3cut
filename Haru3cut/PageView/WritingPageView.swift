@@ -9,6 +9,7 @@ import UIKit
 import SwiftUI
 import TagTextField
 import Alamofire
+import SwiftyJSON
 
 struct WritingPageView: View {
     @Environment(\.presentationMode) var presentationMode
@@ -19,14 +20,17 @@ struct WritingPageView: View {
     @State private var selectedImage: UIImage?
     @State private var isImagePickerDisplay = false
     
-    @State var tag = ""
+    //@State var tag = ""
     @State var tagClick = false
     
-    @State var tags = [String]()
+    //@State var tags = [String]()
     @State var keyword = ""
     
     var allTags = ["운동", "일상", "취미"]
     //var resultTag = TagTextField.returnTags(self.tags)
+    
+    let queue = DispatchQueue.global()
+    var textTag = test()
     
     var body: some View {
         VStack{
@@ -41,7 +45,13 @@ struct WritingPageView: View {
                  
                  NavigationLink(destination: MyPostPageView(), label:{
                      Button(action: {
-                         writingPostMethod(nickName: "test003", nickNameTag: 6881, image: selectedImage!.jpegData(compressionQuality: 0.5)!, tag: test().tags, privatePost: true)
+                         if test().tags != [] {
+                             writingPostMethod(nickName: "test003", nickNameTag: 6881, image: selectedImage!.jpegData(compressionQuality: 0.5)!, tag: textTag.tags, privatePost: true)
+                             print("tags:       \(textTag.tags)")
+                         } else {
+                             print("tags nil")
+                             print("textfield tags: \(textTag.returnTag())")
+                         }
                      }){
                          Image(systemName: "square.and.arrow.up")
                              .resizable()
@@ -96,7 +106,7 @@ struct WritingPageView: View {
                     .padding()
             }
             
-            test()
+            textTag
             
         }//.navigationBarTitleDisplayMode(.inline)
         //.edgesIgnoringSafeArea(.top)
@@ -116,12 +126,24 @@ public struct writingForm: Codable {
     var nickName: String = ""
 }
 
+func json(from object: Any) -> String? {
+    guard let data = try? JSONSerialization.data(withJSONObject: object, options: []) else {
+        return nil
+    }
+    return String(data: data, encoding: String.Encoding.utf8)
+}
+
 func writingPostMethod(nickName: String, nickNameTag: Int, image: Data, tag: [String], privatePost: Bool) {
-    let header: [String:String] = ["Content-Type":"multipart/form-data"]
-    let param: [String:Any] = [
+    let header: [String: String] = ["Content-Type":"multipart/form-data"]
+    // MARK: - tag preprocessing
+    let paramsJSON = JSON(tag)
+    let paramsString = paramsJSON.rawString(String.Encoding.utf8, options: JSONSerialization.WritingOptions.prettyPrinted)!
+    //let tagString = json(from: tag)!
+    
+    let param: [String: Any] = [
         "nickName" : nickName,
         "nickNameTag" : nickNameTag,
-        "tag": tag,
+        "tag": paramsString,
         "privatePost": privatePost
     ]
     AF.upload(multipartFormData: { multipartFormData in
