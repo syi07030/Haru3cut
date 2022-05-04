@@ -19,6 +19,7 @@
 		A7B6E2E927E1E55B000D8B6F /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B6E2E827E1E55B000D8B6F /* TabView.swift */; };
 		A7BB65BA27E34F970050404A /* ShareData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BB65B927E34F970050404A /* ShareData.swift */; };
 		A7BB65BC27E352530050404A /* ErrorMessageDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BB65BB27E352530050404A /* ErrorMessageDesign.swift */; };
+		A7C8A2F628223DCF00099A51 /* GetOneDiaryPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C8A2F528223DCF00099A51 /* GetOneDiaryPageView.swift */; };
 		A7F1000027D10CC1005B1D2A /* RegisterPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1FFFD27D10CC1005B1D2A /* RegisterPageView.swift */; };
 		A7F1000227D10CD8005B1D2A /* AccountSelectPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1000127D10CD8005B1D2A /* AccountSelectPageView.swift */; };
 		A7F1000327D10CD8005B1D2A /* AccountSelectPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1000127D10CD8005B1D2A /* AccountSelectPageView.swift */; };
@@ -93,6 +94,7 @@
 		A7B6E2E827E1E55B000D8B6F /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		A7BB65B927E34F970050404A /* ShareData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareData.swift; sourceTree = "<group>"; };
 		A7BB65BB27E352530050404A /* ErrorMessageDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessageDesign.swift; sourceTree = "<group>"; };
+		A7C8A2F528223DCF00099A51 /* GetOneDiaryPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOneDiaryPageView.swift; sourceTree = "<group>"; };
 		A7E0C89F27F4363D00DD2376 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7F1000127D10CD8005B1D2A /* AccountSelectPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSelectPageView.swift; sourceTree = "<group>"; };
 		A7F1000527D10D06005B1D2A /* MyPostPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostPageView.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				A79DE7C127EB123A002948F1 /* MyPageView.swift */,
 				A79DE7C527EB4F62002948F1 /* WritingPageView.swift */,
 				A76BEF2827FAD339002AD9A4 /* test.swift */,
+				A7C8A2F528223DCF00099A51 /* GetOneDiaryPageView.swift */,
 			);
 			path = PageView;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 				A7B6E2E527E1CBDC000D8B6F /* LoginCheck.swift in Sources */,
 				A7F1003D27DB7658005B1D2A /* PartyPageView.swift in Sources */,
 				A7F1FFFA27D10CB0005B1D2A /* LoginPageView.swift in Sources */,
+				A7C8A2F628223DCF00099A51 /* GetOneDiaryPageView.swift in Sources */,
 				A7F1003927DA0D54005B1D2A /* Color.swift in Sources */,
 				A7BB65BC27E352530050404A /* ErrorMessageDesign.swift in Sources */,
 				A76BEF2927FAD339002AD9A4 /* test.swift in Sources */,
