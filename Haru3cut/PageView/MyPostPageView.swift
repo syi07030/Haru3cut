@@ -9,7 +9,26 @@ import SwiftUI
 import Alamofire
 import Combine
 
+/*
+ extension UIImageView {
+     func load(url: URL){
+         DispatchQueue.global().async { [weak self] in
+             if let data = try? Data(contentsOf: url){
+                 if let image = UIImage(data: data){
+                     DispatchQueue.main.async {
+                         self?.image = image
+                     }
+                 } else {
+                     print("uiimage image error")
+                 }
+             } else {
+                 print("uiimage data error")
+             }
+         }
+     }
+ }*/
 struct MyDiaryRow: View{
+    //@StateObject private var imageLoader = URLImageLoader()
     var diary: postResult
     @State private var postID = self.diary.id
     @State private var nickName = self.diary.nickName
