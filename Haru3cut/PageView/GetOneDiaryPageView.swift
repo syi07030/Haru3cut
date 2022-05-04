@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import Alamofire
+import SwiftyJSON
 
 struct GetOneDiaryPageView: View {
     
@@ -39,7 +40,7 @@ struct GetOneDiaryPageView: View {
                         .toggleStyle(CheckBox())
                              
                     Button(action: {
-                        //update
+                        updateDiary(postID: postResults.id, nickName: postResults.nickName, nickNameTag: postResults.nickNameTag, image: selectedImage!.jpegData(compressionQuality: 0.5)!, tag: [], privatePost: true)
                     }){
                         Image(systemName: "square.and.arrow.up")
                             .resizable()
@@ -52,6 +53,7 @@ struct GetOneDiaryPageView: View {
             
             Divider()
     
+            //사진에 postResults.image 들어가야 함
                 Button(action: {
                     self.showingAlert.toggle()
                 },label: {Text("Add Image")})
@@ -73,10 +75,11 @@ struct GetOneDiaryPageView: View {
                     .padding()
             }
             
+        //tag에 postResults.tag 들어가야 함
             test()
         
         Button(action: {
-            //delete
+            deleteDiary(postID: postResults.id, nickName: postResults.nickName, nickNameTag: postResults.nickNameTag)
         }, label: {
             Text("DELETE")
         })
@@ -205,6 +208,54 @@ func GetOneDiary(postID: String, nickName: String, nickNameTag: Int) -> postResu
 }
 
 
-func updateDiary(){
+func updateDiary(postID: String, nickName: String, nickNameTag: Int, image: Data, tag: [String], privatePost: Bool) {
+    let header: [String: String] = ["Content-Type":"multipart/form-data"]
+    // MARK: - tag preprocessing
+    let paramsJSON = JSON(tag)
+    let paramsString = paramsJSON.rawString(String.Encoding.utf8, options: JSONSerialization.WritingOptions.prettyPrinted)!
+    //let tagString = json(from: tag)!
     
+    let param: [String: Any] = [
+        "postID" : postID,
+        "nickName" : nickName,
+        "nickNameTag" : nickNameTag,
+        "tag": paramsString,
+        "privatePost": privatePost
+    ]
+    AF.upload(multipartFormData: { multipartFormData in
+        for (key,value) in param {
+            multipartFormData.append("\(value)".data(using: .utf8)!,withName:key, mimeType: "text/plain")
+        }
+        if image != nil { //image에 파일이 없을 경우
+        multipartFormData.append(image, withName:"image", fileName:"\(image).jpg", mimeType: "image/jpg")
+        }
+    }, to:"http://3.36.88.174:8000/diary/updateDiary", method: .post)
+    .responseJSON(){ response in
+        switch response.result{
+        case .success:
+            if let data = try! response.result.get() as? String{
+                print("\(data)")
+            }
+        case .failure(let error):
+            print("Error:\(error)")
+        }
+    }
+    return
+}
+
+func deleteDiary(postID: String, nickName: String, nickNameTag: Int) {
+    let param: [String: Any] = [
+        "_id" : postID,
+        "nickName" : nickName,
+        "nickNameTag" : nickNameTag
+    ]
+    AF.request("http://3.36.88.174:8000/diary/deleteDiary", method: .post, parameters: param, encoding: JSONEncoding.default, headers: nil).validate(statusCode: 200 ..< 299).responseJSON { response in
+        switch response.result {
+        case .success:
+            print("Success Delete")
+        default:
+            print("Error in Delete")
+        }
+    }
+    return
 }
