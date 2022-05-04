@@ -8,6 +8,7 @@ target 'Haru3cut' do
   # Pods for Haru3cut
 pod 'Alamofire', '~> 5.5'
 pod "TagTextField"
+pod 'SwiftyJSON', '~> 4.0'
 
   target 'Haru3cutTests' do
     inherit! :search_paths
