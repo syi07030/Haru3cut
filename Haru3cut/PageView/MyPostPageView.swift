@@ -10,10 +10,10 @@ import Alamofire
 import Combine
 
 struct MyDiaryRow: View{
-    var diary: postResult
-    @State private var postID = self.diary.id
-    @State private var nickName = self.diary.nickName
-    @State private var nickNameTag = self.diary.nickNameTag
+    @State var diary: postResult
+    //@State var postID = diary.id
+    //@State var nickName = diary.nickName
+    //@State var nickNameTag = diary.nickNameTag
     var body: some View{
         VStack{
             HStack{
@@ -28,7 +28,7 @@ struct MyDiaryRow: View{
                 }
                 Spacer()
                 Image(systemName: "eye.slash.fill")
-                NavigationLink(destination: GetOneDiaryPageView(postID: $postID, nickName: $nickName, nickNameTag: $nickNameTag), label:{
+                NavigationLink(destination: GetOneDiaryPageView(diary: $diary), label:{
                     Image(systemName: "pencil")
                 })
                 .padding()
@@ -53,6 +53,7 @@ struct MyDiaryRow: View{
 
 struct MyPostPageView: View {
     @State var searchText = ""
+    @State var diary: postResult
     let postResults = postMethod()
     
     var body: some View {
@@ -67,7 +68,41 @@ struct MyPostPageView: View {
                         .frame(height: 40)
                     Spacer()
                     List(postResults) { result in
-                        MyDiaryRow(diary: result)
+                        //MyDiaryRow(diary: result)
+                        $diary = result
+                        VStack{
+                            HStack{
+                                Image("profile")
+                                    .frame(width: 50, height: 50, alignment: .center)
+                                    .cornerRadius(50)
+                                    .overlay(RoundedRectangle(cornerRadius: 50)
+                                    .stroke(Color.black, lineWidth: 2))
+                                VStack{
+                                    Text("\(diary.nickName)")
+                                    Text("#\(diary.nickNameTag)")
+                                }
+                                Spacer()
+                                Image(systemName: "eye.slash.fill")
+                                NavigationLink(destination: GetOneDiaryPageView(diary: $diary), label:{
+                                    Image(systemName: "pencil")
+                                })
+                                .padding()
+                            }
+                            
+                            HStack{
+                                ForEach(diary.tag, id: \.self ){ tag in
+                                    Text("\(tag)")
+                                }
+                                Spacer()
+                            }
+                            AsyncImage(url:URL(string:diary.image)!){ image in
+                                image.resizable()
+                            } placeholder: {
+                                Color.ww
+                            }
+                            .frame(width: 300, height: 300)
+                            .clipShape(RoundedRectangle(cornerRadius: 25))
+                        }
                     }
                     .listStyle(.inset)
                     Spacer()

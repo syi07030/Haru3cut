@@ -12,9 +12,10 @@ import SwiftyJSON
 
 struct GetOneDiaryPageView: View {
     
-    @Binding var postID: String
-    @Binding var nickName: String
-    @Binding var nickNameTag: Int
+    @Binding var diary: postResult
+    //@Binding var postID: String
+    //@Binding var nickName: String
+    //@Binding var nickNameTag: Int
     //@Binding var image: String
     //@Binding var privatePost: Bool
     //@Binding var tag: [String]
@@ -26,7 +27,7 @@ struct GetOneDiaryPageView: View {
     @State private var selectedImage: UIImage?
     @State private var isImagePickerDisplay = false
     
-    let postResults = GetOneDiary(postID: self.postID, nickName: self.nickName, nickNameTag: self.nickNameTag)
+    let postResults = GetOneDiary(diary: diary)
     
     var body: some View {
         VStack{
@@ -92,8 +93,8 @@ struct GetOneDiaryPageView: View {
 
 public var getOneDiaryResult = postResult()
 
-func GetOneDiary(postID: String, nickName: String, nickNameTag: Int) -> postResult {
-    let param: [String:Any] = ["_id" : postID, "nickName" : nickName,"nickNameTag" : nickNameTag]
+func GetOneDiary(diary: postResult) -> postResult {
+    let param: [String:Any] = ["_id" : diary.id, "nickName" : diary.nickName,"nickNameTag" : diary.nickNameTag]
     AF.request("http://3.36.88.174:8000/diary/getOneDiary", method: .post, parameters: param, encoding: JSONEncoding.default, headers: nil).validate(statusCode: 200 ..< 299).responseJSON { AFdata in
         switch AFdata.result {
         case .success(let obj):
