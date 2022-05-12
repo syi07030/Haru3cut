@@ -58,7 +58,6 @@ struct MyPostPageView: View {
     
     var body: some View {
         NavigationView{
-            
             ZStack(alignment: .bottomTrailing) {
                 VStack {
                     HStack(spacing: 10) {
@@ -69,7 +68,7 @@ struct MyPostPageView: View {
                     Spacer()
                     List(postResults) { result in
                         //MyDiaryRow(diary: result)
-                        $diary = result
+                        //$diary = result
                         VStack{
                             HStack{
                                 Image("profile")
@@ -83,7 +82,7 @@ struct MyPostPageView: View {
                                 }
                                 Spacer()
                                 Image(systemName: "eye.slash.fill")
-                                NavigationLink(destination: GetOneDiaryPageView(diary: $diary), label:{
+                                NavigationLink(destination: GetOneDiaryPageView(diary: Binding<postResult>(get: {return result}, set: {diary = result})) , label:{
                                     Image(systemName: "pencil")
                                 })
                                 .padding()
