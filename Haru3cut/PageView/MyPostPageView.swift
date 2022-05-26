@@ -53,7 +53,7 @@ struct MyDiaryRow: View{
 
 struct MyPostPageView: View {
     @State var searchText = ""
-    @State var diary: postResult
+    @State var diary = postResult()
     let postResults = postMethod()
     
     var body: some View {
@@ -77,24 +77,24 @@ struct MyPostPageView: View {
                                     .overlay(RoundedRectangle(cornerRadius: 50)
                                     .stroke(Color.black, lineWidth: 2))
                                 VStack{
-                                    Text("\(diary.nickName)")
-                                    Text("#\(diary.nickNameTag)")
+                                    Text("\(result.nickName)")
+                                    Text("#\(result.nickNameTag)")
                                 }
                                 Spacer()
                                 Image(systemName: "eye.slash.fill")
-                                NavigationLink(destination: GetOneDiaryPageView(diary: Binding<postResult>(get: {return result}, set: {diary = result})) , label:{
+                                NavigationLink(destination: GetOneDiaryPageView(diary: $diary) , label:{
                                     Image(systemName: "pencil")
                                 })
                                 .padding()
                             }
                             
                             HStack{
-                                ForEach(diary.tag, id: \.self ){ tag in
+                                ForEach(result.tag, id: \.self ){ tag in
                                     Text("\(tag)")
                                 }
                                 Spacer()
                             }
-                            AsyncImage(url:URL(string:diary.image)!){ image in
+                            AsyncImage(url:URL(string:result.image)!){ image in
                                 image.resizable()
                             } placeholder: {
                                 Color.ww
@@ -306,6 +306,7 @@ func postMethod() -> [postResult] {
     return ""
 }*/
 
+/*
 #if DEBUG
 struct MyPostPageView_Previews: PreviewProvider {
     static var previews: some View {
@@ -313,3 +314,4 @@ struct MyPostPageView_Previews: PreviewProvider {
     }
 }
 #endif
+*/

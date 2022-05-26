@@ -13,6 +13,7 @@ import SwiftyJSON
 struct GetOneDiaryPageView: View {
     
     @Binding var diary: postResult
+    
     //@Binding var postID: String
     //@Binding var nickName: String
     //@Binding var nickNameTag: Int
@@ -27,7 +28,7 @@ struct GetOneDiaryPageView: View {
     @State private var selectedImage: UIImage?
     @State private var isImagePickerDisplay = false
     
-    let postResults = GetOneDiary(diary: diary)
+    @State var postResults = getOneDiaryResult
     
     var body: some View {
         VStack{
@@ -41,6 +42,7 @@ struct GetOneDiaryPageView: View {
                         .toggleStyle(CheckBox())
                              
                     Button(action: {
+                        postResults = GetOneDiary(diary: diary)
                         updateDiary(postID: postResults.id, nickName: postResults.nickName, nickNameTag: postResults.nickNameTag, image: selectedImage!.jpegData(compressionQuality: 0.5)!, tag: [], privatePost: true)
                     }){
                         Image(systemName: "square.and.arrow.up")
