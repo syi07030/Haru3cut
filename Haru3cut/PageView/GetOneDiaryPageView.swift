@@ -97,7 +97,7 @@ public var getOneDiaryResult = postResult()
 
 func GetOneDiary(diary: postResult) -> postResult {
     let param: [String:Any] = ["_id" : diary.id, "nickName" : diary.nickName,"nickNameTag" : diary.nickNameTag]
-    AF.request("http://3.36.88.174:8000/diary/getOneDiary", method: .post, parameters: param, encoding: JSONEncoding.default, headers: nil).validate(statusCode: 200 ..< 299).responseJSON { AFdata in
+    AF.request(URL+"/diary/getOneDiary", method: .post, parameters: param, encoding: JSONEncoding.default, headers: nil).validate(statusCode: 200 ..< 299).responseJSON { AFdata in
         switch AFdata.result {
         case .success(let obj):
             do {
@@ -232,7 +232,7 @@ func updateDiary(postID: String, nickName: String, nickNameTag: Int, image: Data
         if image != nil { //image에 파일이 없을 경우
         multipartFormData.append(image, withName:"image", fileName:"\(image).jpg", mimeType: "image/jpg")
         }
-    }, to:"http://3.36.88.174:8000/diary/updateDiary", method: .post)
+    }, to:URL+"/diary/updateDiary", method: .post)
     .responseJSON(){ response in
         switch response.result{
         case .success:
@@ -252,7 +252,7 @@ func deleteDiary(postID: String, nickName: String, nickNameTag: Int) {
         "nickName" : nickName,
         "nickNameTag" : nickNameTag
     ]
-    AF.request("http://3.36.88.174:8000/diary/deleteDiary", method: .post, parameters: param, encoding: JSONEncoding.default, headers: nil).validate(statusCode: 200 ..< 299).responseJSON { response in
+    AF.request(URL+"/diary/deleteDiary", method: .post, parameters: param, encoding: JSONEncoding.default, headers: nil).validate(statusCode: 200 ..< 299).responseJSON { response in
         switch response.result {
         case .success:
             print("Success Delete")

@@ -11,3 +11,4 @@ import SwiftUI
 public var name = "aa" //nickName
 public var emailAddress = ""
 public var pw = ""
+public var URL = ""

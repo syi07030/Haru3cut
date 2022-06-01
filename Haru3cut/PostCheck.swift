@@ -11,7 +11,7 @@ import SwiftUI
 import Alamofire
 
 func postSave(nickName: String, nickNameTag: String, image: String, tag: String, privatePost: Bool) -> String {
-    let url = "http://3.36.88.174:8000/post" //확인 필요
+    let url = URL+"/post" //확인 필요
     let encoder = JSONEncoder()
     
     let param = ["nickName" : nickName, "nickNameTag" : nickNameTag, "image" : image, "tag": tag, "privatePost" : privatePost, "createdAt" : "" , "updatedAt" : ""] as [String : String]
@@ -41,7 +41,7 @@ func postSave(nickName: String, nickNameTag: String, image: String, tag: String,
 }
 
 func postShow() -> [Dictionary<String,String>] {
-    let url = "http://3.36.88.174:8000/post" //확인 필요
+    let url = URL+"/post" //확인 필요
     let decoder = JSONDecoder()
     var returnJson = [Dictionary<String,String>]()
     

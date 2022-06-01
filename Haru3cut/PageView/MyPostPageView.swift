@@ -123,7 +123,7 @@ struct MyPostPageView: View {
 }
 
 func postShow() -> String {
-    let url = "http://3.36.88.174:8000/diary/getMyDiary"
+    let url = URL+"/diary/getMyDiary"
     let param: [String:Any] = ["nickName" : "test003","nickNameTag" : 6881]
     let encoder = JSONEncoder()
     let decoder = JSONDecoder()
@@ -167,7 +167,7 @@ public var results = [postResult]()
 
 func postMethod() -> [postResult] {
     let param: [String:Any] = ["nickName" : "test003","nickNameTag" : 6881]
-    AF.request("http://3.36.88.174:8000/diary/getMyDiary", method: .post, parameters: param, encoding: JSONEncoding.default, headers: nil).validate(statusCode: 200 ..< 299).responseJSON { AFdata in
+    AF.request(URL+"/diary/getMyDiary", method: .post, parameters: param, encoding: JSONEncoding.default, headers: nil).validate(statusCode: 200 ..< 299).responseJSON { AFdata in
         switch AFdata.result {
         case .success(let obj):
             do {
@@ -286,7 +286,7 @@ func postMethod() -> [postResult] {
 /*func postMethod2() -> String {
     let param: [String:Any] = ["nickName" : "test003","nickNameTag" : 6881]
     var results = [postResult]()
-    AF.request("http://3.36.88.174:8000/post/getMyDiary", method: .post, parameters: param, encoding: JSONEncoding.default, headers: nil).validate(statusCode: 200 ..< 299).responseJSON { AFdata in
+    AF.request(URL+"/post/getMyDiary", method: .post, parameters: param, encoding: JSONEncoding.default, headers: nil).validate(statusCode: 200 ..< 299).responseJSON { AFdata in
         switch AFdata.result {
         case .success(let obj):
             do {

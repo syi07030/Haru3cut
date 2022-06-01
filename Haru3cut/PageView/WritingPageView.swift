@@ -151,7 +151,7 @@ func writingPostMethod(nickName: String, nickNameTag: Int, image: Data, tag: [St
             multipartFormData.append("\(value)".data(using: .utf8)!,withName:key, mimeType: "text/plain")
         }
         multipartFormData.append(image, withName:"image", fileName:"\(image).jpg", mimeType: "image/jpg")
-    }, to:"http://3.36.88.174:8000/post/newDiary", method: .post)
+    }, to:URL+"/post/newDiary", method: .post)
     .responseJSON(){ response in
         switch response.result{
         case .success:

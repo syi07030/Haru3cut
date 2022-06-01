@@ -10,7 +10,7 @@ import SwiftUI
 import Alamofire
 
 func loginCheck(email: String, password: String) -> String {
-    let url = "http://3.36.88.174:8000/login"
+    let url = URL+"/login"
     let encoder = JSONEncoder()
     //let login = LoginRequest(email: email, password: password)
     //let loginJsonData = try? encoder.encode(login)
