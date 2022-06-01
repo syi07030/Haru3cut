@@ -1,0 +1,6 @@
+framework module Pods_Haru3cutTests {
+  umbrella header "Pods-Haru3cutTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
